@@ -1,4 +1,3 @@
-<p id="notice"><%= notice %></p>
 
 <p>
   <strong>Title:</strong>
@@ -23,6 +22,11 @@
 <p>
   <strong>User:</strong>
   <%= @question.user_id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= User.find(@question.user_id).username %>
 </p>
 
 <%= link_to 'Edit', edit_question_path(@question) %> |

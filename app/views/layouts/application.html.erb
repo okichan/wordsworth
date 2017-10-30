@@ -15,7 +15,16 @@
 	</head>
 
 	<body>
-		<%= yield %>
+		<% unless current_page?(root_path) %>
+			<%= render '/layouts/header' %>
+			<div class="container">
+				<p id="notice"><%= notice %></p>
+				<p class="alert"><%= alert %></p>
+				<%= yield %>
+			</div>
+		<% else %>
+			<%= yield %>
+		<% end %>
 
 	</body>
 </html>

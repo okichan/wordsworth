@@ -1,10 +1,8 @@
-<div class="container">
-<p id="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+<div class="btn btn-primary btn-block btn-post"><%= link_to 'Ask a question', new_question_path %></div>
+<br>
+<h1>Latest question</h1>
 
-<h1>Questions</h1>
-
-<table></table>
+<table>
 	<thead>
 		<tr>
 			<th>Title</th>
@@ -34,7 +32,4 @@
 
 <br>
 
-<%= link_to 'New Question', new_question_path %>
-<%= link_to 'Log out', destroy_user_session_path, method: :delete %>
-
-</div>
+<%# link_to 'Log out', destroy_user_session_path, method: :delete %>
