@@ -1,5 +1,19 @@
 @import 'bootstrap';
 
+.landing {
+    background-image: asset-data-url('mia-baker-367260.jpg');
+    background-position: 30% 60%; 
+    background-size: cover;
+    height: 100vh;
+}
 .logo {
     
+    margin: 30px;
+    font-family: 'Tangerine', cursive;
+    color: white;
+    font-size: 100px;
+}
+
+body {
+    font-family: 'Vollkorn', serif;
 }
