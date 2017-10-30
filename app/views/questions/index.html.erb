@@ -10,7 +10,9 @@
 		<h3 class="latest-question">Latest question</h3>
 		<h3 class="question-title"><%= link_to @questions.first.title, @questions.first %></h3>
 		<div class="question-body">
-			<%= simple_format(@questions.first.text) %>
+			<a href=/questions/<%= @questions.first.id %>>
+				<%= simple_format(@questions.first.text) %>
+			</a>
 		</div>
 		<div class='right'>Posted at: <%= format_time(@questions.first.created_at) %></div>
 	</div>
@@ -23,7 +25,7 @@
 	<table>
 		<% @questions.each do |question| %>
 			<% if question == @questions.first %>
-			<% next %>
+				<% next %>
 			<% end %>
 			<tr>
 				<td><%= link_to question.title, question %></td>
