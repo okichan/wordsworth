@@ -7,13 +7,29 @@
     height: 100vh;
 }
 .logo {
-    
-    margin: 30px;
+    text-shadow: 3px 3px 2px gray;
+    margin: 50px;
     font-family: 'Tangerine', cursive;
     color: white;
-    font-size: 100px;
+    font-size: 4em;
 }
 
 body {
     font-family: 'Vollkorn', serif;
+}
+
+@media (min-width: 768px) {
+    .logo {
+        font-size: 10em;
+    }
+}
+
+.btn-primary {
+    background-color: #3A4E4E !important;
+    border-color: #3A4E4E !important;
+}
+
+.btn-primary:hover {
+    background-color: #435B5B !important;
+    border-color: #435B5B !important;
 }
