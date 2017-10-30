@@ -20,3 +20,4 @@
 - Shrine and its dependencies
 - Dotenv
 - Rspec
+- Mailgun
