@@ -11,5 +11,5 @@
 
 ## ERD
 
-![alt text](app/assets/images/erd.png "DBdesigner")
-![alt text](app/assets/images/erd2.png "SmartDraw")
+![DBdesigner](app/assets/images/erd.png "DBdesigner")
+![SmartDraw](app/assets/images/erd2.png "SmartDraw")
