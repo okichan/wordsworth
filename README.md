@@ -13,3 +13,10 @@
 
 ![DBdesigner](app/assets/images/erd.png "DBdesigner")
 ![SmartDraw](https://github.com/okichan/wordsworth/blob/master/app/assets/images/erd2.PNG "SmartDraw")
+
+## Gems used
+- Bootstrap
+- Devise
+- Shrine and its dependencies
+- Dotenv
+- Rspec
