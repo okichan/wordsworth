@@ -14,13 +14,13 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title, id: :question_title %>
+    <%# form.label :title %>
+    <%= form.text_field :title, id: :question_title, placeholder: :title %>
   </div>
 
   <div class="field">
-    <%= form.label :text %>
-    <%= form.text_area :text, id: :question_text %>
+    <%# form.label :text %>
+    <%= form.text_area :text, id: :question_text, placeholder: :text %>
   </div>
 
   <div class="field">
@@ -39,6 +39,6 @@
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Post" %>
   </div>
 <% end %>

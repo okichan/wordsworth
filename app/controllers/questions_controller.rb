@@ -6,7 +6,7 @@ class QuestionsController < ApplicationController
   # GET /questions.json
   def index
     @user = current_user
-    @questions = Question.all
+    @questions = Question.all.order(created_at: 'desc')
   end
 
   # GET /questions/1

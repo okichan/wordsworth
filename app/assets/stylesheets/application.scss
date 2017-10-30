@@ -2,6 +2,7 @@
 
 body {
     font-family: 'Vollkorn', serif;
+    color: #444
 }
 
 .landing {
@@ -97,21 +98,75 @@ header {
     }
 }
 
+.question-body {
+    border: 1px solid rgb(228, 228, 228);
+    padding: 12px;
+    margin-top: 12px;
+}
+
+.latest-question {
+    margin: 29px 0;
+}
+
+.question-title {
+    a {
+        color: rgb(206, 172, 60);
+        transition: text-shadow 0.2s ease;
+        &:hover {
+            text-decoration: none;
+            text-shadow: 3px 3px 3px #ddd;
+        }
+    }
+}
+
+table {
+    width: 100%;
+    border: 1px solid rgb(228, 228, 228);
+}
+
+td {
+    padding: 12px;
+    border-bottom: 1px solid rgb(228, 228, 228);
+    a {
+        color: rgb(206, 172, 60);
+        transition: text-shadow 0.2s ease;
+        &:hover {
+            color: rgb(206, 172, 60);
+            text-decoration: none;
+            text-shadow: 3px 3px 3px #ddd;
+        }
+    }
+}
+
+.right {
+    float: right;
+}
+
+.field {
+    margin: 12px 0;
+}
+
+textarea {
+    width: 70%;    
+    height: 200px;    
+}
+
 // View larger than tablet 
 @media (min-width: 768px) {
     .landing-logo {
         font-size: 160px;
     }
-
+    
     .search-wrapper {
         margin-top: 0px;
         position: relative;
         width: 260px;
         border: 0px solid #73AD21;
     }
-
+    
     .btn-post {
-        width: 29%;
+        max-width: 40%;
         font-size: 1.2em;
     }
+    
 }
