@@ -12,4 +12,4 @@
 ## ERD
 
 ![DBdesigner](app/assets/images/erd.png "DBdesigner")
-![SmartDraw](app/assets/images/erd2.png "SmartDraw")
+![SmartDraw](https://github.com/okichan/wordsworth/blob/master/app/assets/images/erd2.PNG "SmartDraw")
