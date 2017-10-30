@@ -2,8 +2,9 @@
 
 ## User story
 
-[![alt text](app/assets/images/userstory.png "Trello")](https://trello.com/b/taAJv1hw)
-
+<!-- ![alt text](app/assets/images/userstory.png "Trello") -->
+<!-- [![alt text](app/assets/images/userstory.png "Trello")](https://trello.com/b/taAJv1hw) -->
+[<img src="app/assets/images/userstory.png">](https://trello.com/b/taAJv1hw)
 
 ## Framework
 
