@@ -3,7 +3,7 @@
 
 		<div class="text-center" >
 			<% if @profile.image.present? %>
-				<%= image_tag @profile.image_url(:small), class:"avatar" %>
+				<%= image_tag @profile.image_url(:original), class:"avatar" %>
 			<% else %>
 				<%= image_tag 'default_avatar.jpg', class:"avatar" %>
 			<% end %>

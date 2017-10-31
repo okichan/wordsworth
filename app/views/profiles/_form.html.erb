@@ -18,7 +18,7 @@
 
 	<% if @profile.image_data? %>
 		<div class="field">
-			<%= image_tag @profile.image_url(:thumb) %>
+			<%= image_tag @profile.image_url(:original), class:"avatar" %>
 		</div>
 		<div class="field">
 			Remove attachment: <%= form.check_box :remove_image %>
