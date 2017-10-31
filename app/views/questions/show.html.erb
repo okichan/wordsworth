@@ -1,37 +1,36 @@
-  <div class='col col-md-8 offset-md-2'>
-    <p>
-      <strong>Title:</strong>
-      <%= @question.title %>
-    </p>
+<div class='col col-md-8 offset-md-2'>
+  <h2><%= @question.title %></h2>
 
-    <p>
-      <strong>Text:</strong>
-      <%= simple_format(@question.text) %>
-    </p>
+  <p>
+    <%= simple_format(@question.text) %>
+  </p>
 
-    <p>
-      <strong>Lang from:</strong>
-      <%= @question.lang_from %>
-    </p>
+  <p>
+    <strong>from:</strong>
+    <%= @question.lang_from %>
+  </p>
 
-    <p>
-      <strong>Lang to:</strong>
-      <%= @question.lang_to %>
-    </p>
+  <p>
+    <strong>to:</strong>
+    <%= @question.lang_to %>
+  </p>
 
-    <p>
-      <strong>User:</strong>
-      <%= @question.user_id %>
-    </p>
+  <p class="link-yellow text-right">
+    <strong>asked</strong>
+    <%= format_time(@question.created_at) %><br>
+    <% if Profile.find(@question.user_id).image_url(:small).present? %>
+      <%= image_tag Profile.find(@question.user_id).image_url(:small), class: 'avatar-small' %>
+    <% else %>
+      <%= image_tag 'default_avatar.jpg', class:"avatar-small" %>
+    <% end %>
+    <%= link_to User.find(@question.user_id).username, profile_path(@question.user_id) %>
+  </p>
 
-    <p>
-      <strong>User:</strong>
-      <%= User.find(@question.user_id).username %>
-    </p>
-
-    <div class="link-yellow">
+  <div class="link-yellow">
+    <% if current_user.present? && current_user.id == @question.user_id %>
       <%= link_to 'Edit', edit_question_path(@question) %> <br>
-      <%= link_to 'Delete', @question, method: :delete, data: { confirm: 'Are you sure?' } %><br>
-      <%= link_to 'Back', questions_path %>
-    </div>
+    <% end %>
+    <%# link_to 'Delete', @question, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%= link_to 'Back', questions_path %>
   </div>
+</div>

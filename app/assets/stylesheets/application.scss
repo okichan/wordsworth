@@ -160,7 +160,16 @@ textarea {
 }
 
 .avatar {
-    border-radius: 200px;
+    border-radius: 500px;
+    width: 240px;
+    height: 240px;
+}
+
+.avatar-small {
+    border-radius: 500px;
+    width: 30px;
+    height: 30px;
+    margin-right: 4px;
 }
 
 .profile-username {
@@ -195,5 +204,11 @@ textarea {
     .profile-username {
         text-align: left;
         font-size: 3em;    
+    }
+
+    .avatar {
+        border-radius: 500px;
+        width: 330px;
+        height: 330px;
     }
 }

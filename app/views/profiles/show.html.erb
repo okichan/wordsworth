@@ -12,8 +12,13 @@
 
 	<div class="col-md-5 link-yellow" >
 			<h2 class="profile-username"><%= User.find(@profile.user_id).username %></h2>
-			<p><%= @profile.bio %></p>
-			<%= link_to 'Edit', edit_profile_path(@profile) %>
+			<p><%= simple_format(@profile.bio) %></p>
+
+			<% if current_user.present? && current_user.id == @profile.user_id %>
+				<%= link_to 'Edit', edit_profile_path(@profile) %>
+			<% end %>
+			
+			
 	</div>
 
 </div>

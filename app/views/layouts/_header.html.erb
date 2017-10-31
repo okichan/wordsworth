@@ -10,7 +10,11 @@
     <nav>
         <ul class="navbar-right list-inline header-menu">
         <% if signed_in? %>
-            <li class="list-inline-item"><%= link_to current_user.username, profile_path(@profile.id) %></li>|
+            <% if @profile.image.present? %>
+                <li class="list-inline-item"><%= link_to image_tag(@profile.image_url(:small), class:"avatar-small"), profile_path(@profile.id), :title => "Edit / View your profile" %></li>|
+            <% else %>
+                <li class="list-inline-item"><%= link_to current_user.username, profile_path(@profile.id) %></li>|
+            <% end %>
             <li class="list-inline-item"><%= link_to "LOG OUT", destroy_user_session_path, method: :delete %></li>
         <% else %>
             <li class="list-inline-item"><%= link_to "CREATE ACCOUNT",   '#' %></li>|
