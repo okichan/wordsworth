@@ -103,7 +103,7 @@ header {
     margin: 29px 0;
 }
 
-.question-title {
+.link-yellow {
     a {
         color: rgb(206, 172, 60);
         transition: text-shadow 0.2s ease;
@@ -159,6 +159,16 @@ textarea {
     height: 200px;    
 }
 
+.avatar {
+    border-radius: 200px;
+}
+
+.profile-username {
+    font-family: 'Tangerine', cursive;
+    font-weight: bold;
+    text-align: center;    
+}
+
 // View larger than tablet 
 @media (min-width: 768px) {
     .landing-logo {
@@ -176,5 +186,14 @@ textarea {
         max-width: 40%;
         font-size: 1.2em;
     }
+
+    textarea {
+        width: 560px;    
+        height: 200px;    
+    }
     
+    .profile-username {
+        text-align: left;
+        font-size: 3em;    
+    }
 }

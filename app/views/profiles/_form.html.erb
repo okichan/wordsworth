@@ -11,19 +11,28 @@
     </div>
   <% end %>
 
+	<div class="field">
+		<%# form.label :image %><br>
+		<%= form.file_field :image %>
+	</div>
+
+	<% if @profile.image_data? %>
+		<div class="field">
+			<%= image_tag @profile.image_url(:thumb) %>
+		</div>
+		<div class="field">
+			Remove attachment: <%= form.check_box :remove_image %>
+		</div>
+	<% end %>
+
   <div class="field">
-    <%= form.label :bio %>
+    <%= form.label :bio %><br>
     <%= form.text_area :bio, id: :profile_bio %>
   </div>
 
   <div class="field">
     <%= form.label :user_id %>
     <%= form.text_field :user_id, id: :profile_user_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :avatar %>
-    <%= form.text_field :avatar, id: :profile_avatar %>
   </div>
 
   <div class="actions">

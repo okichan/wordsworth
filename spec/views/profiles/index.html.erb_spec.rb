@@ -6,12 +6,12 @@ RSpec.describe "profiles/index", type: :view do
       Profile.create!(
         :bio => "MyText",
         :user_id => nil,
-        :avatar => "Avatar"
+        :image_data => "image_data"
       ),
       Profile.create!(
         :bio => "MyText",
         :user_id => nil,
-        :avatar => "Avatar"
+        :image_data => "image_data"
       )
     ])
   end
@@ -20,6 +20,6 @@ RSpec.describe "profiles/index", type: :view do
     render
     assert_select "tr>td", :text => "MyText".to_s, :count => 2
     assert_select "tr>td", :text => nil.to_s, :count => 2
-    assert_select "tr>td", :text => "Avatar".to_s, :count => 2
+    assert_select "tr>td", :text => "image_data".to_s, :count => 2
   end
 end

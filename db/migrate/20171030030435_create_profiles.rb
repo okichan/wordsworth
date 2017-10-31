@@ -3,7 +3,7 @@ class CreateProfiles < ActiveRecord::Migration[5.1]
     create_table :profiles do |t|
       t.text :bio
       t.references :user, foreign_key: true
-      t.string :avatar
+      t.string :image_data
 
       t.timestamps
     end

@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
   before_action :set_question, only: [:show, :edit, :update, :destroy]
-  before_action :set_profile, only: [:index]
+  before_action :set_profile
   before_action :authenticate_user!, :except => [:show, :index]
 
   # GET /questions
@@ -73,7 +73,7 @@ class QuestionsController < ApplicationController
     end
 
     def set_profile
-      @profile = Profile.find(current_user.id)
+      @profile = Profile.find(current_user.id) if current_user.present?
     end
     
     # Never trust parameters from the scary internet, only allow the white list through.

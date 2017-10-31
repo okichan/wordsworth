@@ -5,7 +5,7 @@ RSpec.describe "profiles/new", type: :view do
     assign(:profile, Profile.new(
       :bio => "MyText",
       :user_id => nil,
-      :avatar => "MyString"
+      :image_data => "MyString"
     ))
   end
 
@@ -18,7 +18,7 @@ RSpec.describe "profiles/new", type: :view do
 
       assert_select "input[name=?]", "profile[user_id]"
 
-      assert_select "input[name=?]", "profile[avatar]"
+      assert_select "input[name=?]", "profile[image_data]"
     end
   end
 end

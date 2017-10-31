@@ -5,7 +5,7 @@ RSpec.describe "profiles/show", type: :view do
     @profile = assign(:profile, Profile.create!(
       :bio => "MyText",
       :user_id => nil,
-      :avatar => "Avatar"
+      :image_data => "image_data"
     ))
   end
 
@@ -13,6 +13,6 @@ RSpec.describe "profiles/show", type: :view do
     render
     expect(rendered).to match(/MyText/)
     expect(rendered).to match(//)
-    expect(rendered).to match(/Avatar/)
+    expect(rendered).to match(/image_data/)
   end
 end

@@ -29,9 +29,9 @@
       <%= User.find(@question.user_id).username %>
     </p>
 
-    <%= link_to 'Edit', edit_question_path(@question) %> <br>
-    <%= link_to 'Delete', @question, method: :delete, data: { confirm: 'Are you sure?' } %><br>
-    <%= link_to 'Back', questions_path %>
+    <div class="link-yellow">
+      <%= link_to 'Edit', edit_question_path(@question) %> <br>
+      <%= link_to 'Delete', @question, method: :delete, data: { confirm: 'Are you sure?' } %><br>
+      <%= link_to 'Back', questions_path %>
+    </div>
   </div>
-<div class='row'></div>
-<div class='row'></div>

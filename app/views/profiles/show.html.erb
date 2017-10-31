@@ -1,24 +1,29 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+	<div class="col col-md-4 offset-md-1">
 
-<p>
-  <strong>Avatar:</strong>
-  <%= @profile.avatar %>
-</p>
+		<div class="text-center" >
+			<% if @profile.image.present? %>
+				<%= image_tag @profile.image_url(:small), class:"avatar" %>
+			<% else %>
+				<%= image_tag 'default_avatar.jpg', class:"avatar" %>
+			<% end %>
+		</div>
+	</div>
 
-<p>
-  <strong>User:</strong>
-  <%= User.find(@profile.user_id).username %>
-</p>
+	<div class="col-md-5 link-yellow" >
+			<h2 class="profile-username"><%= User.find(@profile.user_id).username %></h2>
+			<p><%= @profile.bio %></p>
+			<%= link_to 'Edit', edit_profile_path(@profile) %>
+	</div>
 
-<p>
-  <strong>Bio:</strong>
-  <%= @profile.bio %>
-</p>
-<!--
-<p>
-  <strong>User:</strong>
-  <% @profile.user_id %>
-</p>
--->
+</div>
+	<!--
+	<p>
+		<strong>User:</strong>
+		<% @profile.user_id %>
+	</p>
+	-->
 
-<%= link_to 'Edit', edit_profile_path(@profile) %>
+
+
+
