@@ -1,5 +1,6 @@
 class QuestionsController < ApplicationController
   before_action :set_question, only: [:show, :edit, :update, :destroy]
+  before_action :set_profile, only: [:index]
   before_action :authenticate_user!, :except => [:show, :index]
 
   # GET /questions
@@ -71,6 +72,10 @@ class QuestionsController < ApplicationController
       @question = Question.find(params[:id])
     end
 
+    def set_profile
+      @profile = Profile.find(current_user.id)
+    end
+    
     # Never trust parameters from the scary internet, only allow the white list through.
     def question_params
       params.require(:question).permit(:title, :text, :lang_from, :lang_to, :user_id)

@@ -10,7 +10,7 @@
     <nav>
         <ul class="navbar-right list-inline header-menu">
         <% if signed_in? %>
-            <li class="list-inline-item"><%= link_to "EDIT PROFILE",   '#' %></li>|
+            <li class="list-inline-item"><%= link_to current_user.username, profile_path(@profile.id) %></li>|
             <li class="list-inline-item"><%= link_to "LOG OUT", destroy_user_session_path, method: :delete %></li>
         <% else %>
             <li class="list-inline-item"><%= link_to "CREATE ACCOUNT",   '#' %></li>|

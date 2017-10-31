@@ -7,5 +7,11 @@ class User < ApplicationRecord
   has_many :questions
   has_many :answers
   has_one :profile
+
+  after_create :create_profile
+
+  def build_profile
+    Profile.create(user: self) # Associations must be defined correctly for this syntax, avoids using ID's directly.
+  end
   
 end
