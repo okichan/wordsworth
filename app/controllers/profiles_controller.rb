@@ -10,6 +10,8 @@ class ProfilesController < ApplicationController
   # GET /profiles/1
   # GET /profiles/1.json
   def show
+    @prof_self = Profile.find(current_user.id)
+
   end
 
   # GET /profiles/new

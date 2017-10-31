@@ -10,12 +10,15 @@
     <nav>
         <ul class="navbar-right list-inline header-menu">
         <% if signed_in? %>
-            <% if @profile.image.present? %>
-                <li class="list-inline-item"><%= link_to image_tag(@profile.image_url(:small), class:"avatar-small"), profile_path(@profile.id), :title => "Edit / View your profile" %></li>|
-            <% else %>
+            <!-- if not rendered in Profile show page -->
+            <% if @prof_self.nil? %>
                 <li class="list-inline-item"><%= link_to current_user.username, profile_path(@profile.id) %></li>|
+            <!-- if not rendered in Profile show page -->
+            <% else %>
+                <li class="list-inline-item"><%= link_to current_user.username, profile_path(@prof_self.id) %></li>|
             <% end %>
             <li class="list-inline-item"><%= link_to "LOG OUT", destroy_user_session_path, method: :delete %></li>
+        <!-- if not signed in show -->
         <% else %>
             <li class="list-inline-item"><%= link_to "CREATE ACCOUNT",   '#' %></li>|
             <li class="list-inline-item"><%= link_to "LOG IN", new_user_session_path %></li>
@@ -23,4 +26,3 @@
         </ul>
     </nav>
 </header>
-
