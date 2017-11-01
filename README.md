@@ -1,12 +1,11 @@
 # Two-sided Marketplace - Office email translation portal
 
-So for my Rails app project I have decided to create a two-sided marketplace for office workers who need translations / proofreading for their emails.
+So for my Rails app project I have decided to create a two-sided marketplace between office workers and freelance (or aspiring) translators.
 
 Why?
 
-Because this is based on my personal experience where I was asked for Japanese translations for someone who needs to compose an email (or some sort of documents) in a language other than their own, and they ended up feeling guilty asking so many times that they resort to Google tranlsation (probably a bad idea).
-
-Also I have come across multiple situations where I wish someone can proofread my emails to see if it sounds 'business' enough, whether it's English or Japanese.
+Because this is based on my work experience where I was paid to translate some documents from Japanese to English for business purposes. 
+Altough I am not a professional translator, I was actually enjoying the task (in fact I once thought of becoming a translator) so I thought it would be good if there is a portal specifically for translations.
 
 Detailed User Story can be found in Trello. 
 
@@ -37,7 +36,15 @@ I found this service called SmartDraw which I found better visualised than DBdes
 - Rspec
 - Mailgun
 
-## Struggles
-- Shrine, man. Upload failed all the time. It took me several days to investigate the cause and finally discovered that it had to do with JPG's image resizing error with Shrine's dependencies (ImageMagick or GraphicsMagick, it wasn't even Shrine's fault after all).
+## Struggles and lessons learnt
+### Shrine, man. 
+- Upload failed all the time. It took me several days to investigate the cause and finally discovered that it had to do with JPG's image resizing error with Shrine's dependencies (ImageMagick I think, it wasn't even Shrine's fault after all).
 - Although now I know where the error comes from and it is with its resizing feature, I wasn't able to fix it.
 - So I disabled resizing function for a temporary fix.
+
+### I thought I had planned well.
+- I was first thinking of Stack Overflow kind of portal where a question can have multiple answers, however the more I work on it the clearer it became that this is not going to work out as I planned.
+- To be specific, I was stuck where to implement payment system. My initial idea was something like where you need to pay if your posts exceeds certain amount.  
+- However when I consider a two-sided marketplace, I was thinking to myself "this is not going to give much benefits to translators is it?" 
+- So I changed my direction to be more of AirTasker.
+- Thus I had to redesign my framework of course, and re-write hundreds of codes which I spent hell a lot of hours on. Not so much fun.

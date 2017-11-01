@@ -187,6 +187,28 @@ textarea {
     text-align: center;    
 }
 
+.stats-wrapper {
+    border: 0px solid red;
+    display: flex;
+    margin: 29px 0;
+    .stats {
+        border: 0px solid red;
+        width: 20%;
+        text-align: center;
+        line-height: 0.2;
+        margin: auto;
+    }
+}
+
+.quote {
+    padding-top: 20px;
+    margin-bottom: 60px;
+    border: 0px solid red;
+    background-image: asset-data-url('quote.png');
+    background-size: 40px 30px;
+    background-repeat: no-repeat;
+    background-position: top left 
+}
 .cursor {
     cursor: pointer;
 }
@@ -224,7 +246,7 @@ textarea {
 
     .avatar {
         border-radius: 500px;
-        width: 330px;
-        height: 330px;
+        max-width: 300px;
+        max-height: 300px;
     }
 }

@@ -10,20 +10,32 @@
 		</div>
 	</div>
 
-	<div class="col-md-5 link-yellow" >
+	<div class="col-md-5 link-yellow">
 			<h2 class="profile-username"><%= User.find(@profile.user_id).username %></h2>
-			<p><%= simple_format(@profile.bio) %></p>
+			
+			<div class='stats-wrapper'>
+				<div class="stats">
+					<h3><%= @users_questions.size %> </h3>questions
+				</div>
+				<div class="stats">
+					<h3><%= @users_questions.size %> </h3>answers
+				</div>
+			</div>
+
+			<br>
+			<div class='quote'>
+				<p><%= simple_format(@profile.bio) %></p>
+			</div>
 			<% if current_user.present? && current_user.id == @profile.user_id %>
 				<%= link_to 'Edit', edit_profile_path(@profile) %> |
 			<% end %>
 			<%= link_to 'Back', url_for(:back) %>			
-	</div>
 
+	</div>
 </div>
 	<!--
 	<p>
 		<strong>User:</strong>
-		<% @profile.user_id %>
 	</p>
 	-->
 

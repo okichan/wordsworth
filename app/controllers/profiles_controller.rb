@@ -11,7 +11,7 @@ class ProfilesController < ApplicationController
   # GET /profiles/1.json
   def show
     @prof_self = Profile.find(current_user.id)
-
+    @users_questions = Question.where(user_id: @profile.user_id)
   end
 
   # GET /profiles/new
