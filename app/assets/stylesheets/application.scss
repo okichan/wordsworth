@@ -2,7 +2,8 @@
 
 body {
     font-family: 'Vollkorn', serif;
-    color: #444
+    color: #444;
+    background-color: #FBF9F3;
 }
 
 .landing {
@@ -88,7 +89,7 @@ header {
     border: 0px solid #73AD21;
 }
 
-.btn-post {
+.btn-top {
     a {
         color: white;
         font-size: 1.1em;
@@ -98,6 +99,13 @@ header {
     }
 }
 
+.btn-post {
+    background-color: rgb(206, 172, 60);
+    color: white;
+    &:hover {
+        background-color: rgb(179, 149, 52);
+    }
+}
 
 .latest-question {
     margin: 29px 0;
@@ -118,6 +126,7 @@ header {
     border: 1px solid rgb(228, 228, 228);
     padding: 12px;
     margin-top: 12px;
+    background-color: white;
     a {
         color: inherit;
         &:hover {
@@ -178,6 +187,18 @@ textarea {
     text-align: center;    
 }
 
+.cursor {
+    cursor: pointer;
+}
+
+#error_explanation {
+    color: tomato;
+    font-weight: light;
+    p {
+        line-height: 0.5;
+    }
+}
+
 // View larger than tablet 
 @media (min-width: 768px) {
     .landing-logo {
@@ -191,11 +212,6 @@ textarea {
         border: 0px solid #73AD21;
     }
     
-    .btn-post {
-        max-width: 40%;
-        font-size: 1.2em;
-    }
-
     textarea {
         width: 560px;    
         height: 200px;    

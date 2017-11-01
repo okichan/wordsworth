@@ -1,24 +1,18 @@
-
-
 <%= form_with(model: question, local: true) do |form| %>
   <% if question.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(question.errors.count, "error") %> prohibited this question from being saved:</h2>
-
-      <ul>
       <% question.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        <p><%= message %>.</p>
       <% end %>
-      </ul>
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field row">
     <%# form.label :title %>
     <%= form.text_field :title, id: :question_title, placeholder: :title %>
   </div>
 
-  <div class="field">
+  <div class="field row">
     <%# form.label :text %>
     <%= form.text_area :text, id: :question_text, placeholder: :text %>
   </div>
@@ -38,11 +32,14 @@
   </div>
 
 
-  <div class="field">
+  <div class="field row">
     <%= form.hidden_field :user_id, value: current_user.id %>
   </div>
 
-  <div class="actions">
-    <%= form.submit "Post" %>
+  <div class='col col-md-2 offset-md-7'>
+    <div class="actions">
+      <%= form.submit "Post", class: "btn btn-post cursor right" %>
+    </div>
   </div>
+  
 <% end %>
