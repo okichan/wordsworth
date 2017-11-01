@@ -14,7 +14,7 @@
 
   <div class="field row">
     <%# form.label :text %>
-    <%= form.text_area :text, id: :question_text, placeholder: :text %>
+    <%= form.text_area :text, id: :question_text, placeholder: :text, style: "width: 100%;" %>
   </div>
 
 <!--
@@ -36,10 +36,8 @@
     <%= form.hidden_field :user_id, value: current_user.id %>
   </div>
 
-  <div class='col col-md-2 offset-md-7'>
     <div class="actions">
-      <%= form.submit "Post", class: "btn btn-post cursor right" %>
+      <%= form.submit "Post", class: "btn btn-post cursor btn-block" %>
     </div>
-  </div>
   
 <% end %>
