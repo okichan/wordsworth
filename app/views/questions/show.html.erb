@@ -33,4 +33,38 @@
 		<%# link_to 'Delete', @question, method: :delete, data: { confirm: 'Are you sure?' } %>
 		<%= link_to 'Back', questions_path %>
 	</div>
+
+	
+	
+	<% if @question.answers.any? %>
+		<% @question.answers.order(created_at: 'desc').each do |a| %>
+			<p><%= simple_format(a.text) %></p>
+			<div class="text-right">
+				<%= format_time(a.created_at) %>
+			</div>
+			<hr>
+			
+		<% end %>
+	<% end %>
+
+	<%= form_for([@question, @question.answers.build]) do |form| %>
+
+
+	<div class="field">
+		<%# form.label :text %>
+		<%= form.text_area :text, id: :answer_text, placeholder: 'Your answer' %>
+	</div>
+
+	<div class="field">
+		<%= form.hidden_field :user_id, value: current_user.id %>
+	</div>
+
+	<div class="actions">
+		<%= form.submit "Post" %>
+	</div>
+	<% end %>
+
+	
+	
 </div>
+
