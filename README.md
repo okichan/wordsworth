@@ -1,6 +1,7 @@
-# Two-sided Marketplace - Office email translation portal
+# Two-sided Marketplace - Office documents translation portal
 
 So for my Rails app project I have decided to create a two-sided marketplace between office workers and freelance (or aspiring) translators.
+
 
 Why?
 
@@ -37,14 +38,15 @@ I found this service called SmartDraw which I found better visualised than DBdes
 - Mailgun
 
 ## Struggles and lessons learnt
-### Shrine, man. 
+### Shrine!!! 
 - Upload failed all the time. It took me several days to investigate the cause and finally discovered that it had to do with JPG's image resizing error with Shrine's dependencies (ImageMagick I think, it wasn't even Shrine's fault after all).
-- Although now I know where the error comes from and it is with its resizing feature, I wasn't able to fix it.
+- Although now I know where the error comes from and it is to do with with resizing feature's version, I wasn't able to fix it.
 - So I disabled resizing function for a temporary fix.
 
 ### I thought I had planned well.
 - I was first thinking of Stack Overflow kind of portal where a question can have multiple answers, however the more I work on it the clearer it became that this is not going to work out as I planned.
-- To be specific, I was stuck where to implement payment system. My initial idea was something like where you need to pay if your posts exceeds certain amount.  
-- However when I consider a two-sided marketplace, I was thinking to myself "this is not going to give much benefits to translators is it?" 
+- To be specific, I was stuck where to implement payment system. My initial idea was something like you need to pay if you post more than certain amout of times.
+- However when I considered a two-sided marketplace, I was thinking to myself "Would translators be benefitted by this model when they're doing it for free? Is this even a two-sided market? Would I sign up as a translator?"
+- Answer to all the questsions were NO. 
 - So I changed my direction to be more of AirTasker.
-- Thus I had to redesign my framework of course, and re-write hundreds of codes which I spent hell a lot of hours on. Not so much fun.
+- Thus I had to redesign my framework of course, and re-write hundreds of codes which I spent hell a lot of hours on. Learning opportunity yay.

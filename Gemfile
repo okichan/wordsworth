@@ -5,12 +5,14 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'dotenv-rails', groups: [:development, :test]
+
 gem 'bootstrap', '~> 4.0.0.beta2.1'
 gem 'jquery-rails'
 
 gem 'devise'
 gem 'bcrypt-ruby', '3.1.1.rc1', :require => 'bcrypt'
-gem 'mailgun_rails'
+gem 'mailgun-ruby', '~>1.1.6'
 
 # Shrine Dependencies
 gem 'aws-sdk', '~> 3'
@@ -18,7 +20,7 @@ gem 'fastimage'
 gem 'image_processing'
 gem 'mini_magick'
 gem 'shrine'
-gem 'dotenv-rails', groups: [:development, :test]
+
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

@@ -20,7 +20,7 @@
             <li class="list-inline-item"><%= link_to "LOG OUT", destroy_user_session_path, method: :delete %></li>
         <!-- if not signed in show -->
         <% else %>
-            <li class="list-inline-item"><%= link_to "CREATE ACCOUNT",   '#' %></li>|
+            <li class="list-inline-item"><%= link_to "CREATE ACCOUNT",   new_user_registration_path %></li>|
             <li class="list-inline-item"><%= link_to "LOG IN", new_user_session_path %></li>
         <% end %>
         </ul>
