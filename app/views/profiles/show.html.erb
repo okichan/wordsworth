@@ -23,9 +23,12 @@
 			</div>
 
 			<br>
-			<div class='quote'>
-				<p><%= simple_format(@profile.bio) %></p>
-			</div>
+
+			<% if !@profile.bio.empty? %>
+				<div class='quote'>
+					<p><%= simple_format(@profile.bio) %></p>
+				</div>
+			<% end %>
 			<% if current_user.present? && current_user.id == @profile.user_id %>
 				<%= link_to 'Edit', edit_profile_path(@profile) %> |
 			<% end %>
