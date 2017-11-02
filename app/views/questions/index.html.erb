@@ -26,14 +26,11 @@
 <div class="col col-md-8 offset-md-2">
 	<table>
 		<% @questions.each do |question| %>
-			<% if question == @questions.first %>
-				<% next %>
-			<% end %>
 			<tr>
 				<td><%= link_to question.title, question %></td>
 				<%# question.title %>
-				<td class="text-center">5 answers</td>
-				<td><%= format_time(question.created_at) %></td>
+				<td class="text-center"><%= money(question.price) %></td>
+				<td><%= question.lang_from %> > <%= question.lang_to %></td>
 				<%# link_to 'Edit', edit_question_path(question) %>
 				<%# link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %>
 			</tr>

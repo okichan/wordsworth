@@ -1,43 +1,58 @@
 <%= form_with(model: question, local: true) do |form| %>
-  <% if question.errors.any? %>
-    <div id="error_explanation">
-      <% question.errors.full_messages.each do |message| %>
-        <p><%= message %>.</p>
-      <% end %>
-    </div>
-  <% end %>
+	<% if question.errors.any? %>
+		<div id="error_explanation">
+			<% question.errors.full_messages.each do |message| %>
+				<p><%= message %>.</p>
+			<% end %>
+		</div>
+	<% end %>
 
-  <div class="field row">
-    <%# form.label :title %>
-    <%= form.text_field :title, id: :question_title, placeholder: :title %>
-  </div>
+	<div class="field row">
+		<%# form.label :title %>
+		<%= form.text_field :title, id: :question_title, placeholder: :title %>
+	</div>
 
-  <div class="field row">
-    <%# form.label :text %>
-    <%= form.text_area :text, id: :question_text, placeholder: :text, style: "width: 100%;" %>
-  </div>
+	<!--
+	<div class="field row">
+		<%= form.label :text %>
+		<%= form.text_area :text, id: :question_text, placeholder: :text %>
+	</div>
+	-->
 
-<!--
-  <div class="field">
-    <%= form.label :lang_from %>
-    <%= form.text_field :lang_from, id: :question_lang_from %>
-  </div>
--->
+	<div class="field row text-right">
+		<%= form.text_area :text, id: "counted", rows: 6 %>
+		<p>Current character count: <span id="char-count">0</span></p>
+	</div>
 
-  <div class="field">
-    <%= form.label 'From: ' %>
-    <%= form.select(:lang_from, options_for_select(Question::LANG_OPTIONS, selected: form.object.lang_from) ) %>
-    <%= form.label 'To: ' %>
-    <%= form.select(:lang_to, options_for_select(Question::LANG_OPTIONS, selected: form.object.lang_to)) %>
-  </div>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#char-count').html($('#counted').val().length);
+		});
+	
+		$('#counted').keyup(function() {
+			$('#char-count').html($(this).val().length);
+		});
+	</script>
+
+	<div class="field">
+		<%= form.label 'From: ' %>
+		<%= form.select(:lang_from, options_for_select(Question::LANG_OPTIONS, selected: form.object.lang_from) ) %>
+		<%= form.label 'To: ' %>
+		<%= form.select(:lang_to, options_for_select(Question::LANG_OPTIONS, selected: form.object.lang_to)) %>
+	</div>
+
+	<div class="field row">
+		<%= form.label 'Your offer:' %>
+		<%= form.number_field :price, step: :any %>
+	</div>
 
 
-  <div class="field row">
-    <%= form.hidden_field :user_id, value: current_user.id %>
-  </div>
+	<div class="field row">
+		<%= form.hidden_field :user_id, value: current_user.id %>
+	</div>
 
-    <div class="actions">
-      <%= form.submit "Post", class: "btn btn-post cursor btn-block" %>
-    </div>
-  
+		<div class="actions">
+			<%= form.submit "Make an offer", class: "btn btn-post cursor btn-block" %>
+		</div>
+	
 <% end %>

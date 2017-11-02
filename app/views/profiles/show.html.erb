@@ -1,12 +1,13 @@
 <div class="row">
 	<div class="col col-md-4 offset-md-1">
 
-		<div class="text-center" >
+		<div class="text-center link-yellow" >
 			<% if @profile.image.present? %>
 				<%= image_tag @profile.image_url(:original), class:"avatar" %>
 			<% else %>
 				<%= image_tag 'default_avatar.jpg', class:"avatar" %>
 			<% end %>
+			<p><%= link_to 'Contact this person', 'path' %>  </p>
 		</div>
 	</div>
 

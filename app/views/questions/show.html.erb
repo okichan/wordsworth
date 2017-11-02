@@ -1,5 +1,14 @@
 <div class='col col-md-8 offset-md-2'>
-	<h2><%= @question.title %></h2>
+	
+	<div class="row">
+		<div class="col-sm-9">
+			<h2><%= @question.title %></h2>
+		</div>
+
+		<div class="col text-right">
+			<h2><%= money(@question.price) %></h2>
+		</div>
+	</div>
 
 	<div class='row' style='border: 1px solid lightgray; padding: 1em; background-color: white;'>
 		<p><%= simple_format(@question.text) %></p>
@@ -18,7 +27,7 @@
 
 		<div class='col'>
 			<p class="link-yellow text-right">
-				<strong>asked</strong>
+				<strong>requested</strong>
 				<%= format_time(@question.created_at) %><br>
 				<% if Profile.find(@question.user_id).image_url(:small).present? %>
 					<%= image_tag Profile.find(@question.user_id).image_url(:small), class: 'avatar-small' %>
@@ -30,34 +39,34 @@
 		</div>
 	</div>
 
-	<h3><br>Answers</h3>
 	<hr>
 	
 	<% if @question.answers.any? %>
+		<h3><br>Translated.</h3>
 		<% @question.answers.order(created_at: 'desc').each do |a| %>
 			<p><%= simple_format(a.text) %></p>
 			<div class="text-right">
 				<%= format_time(a.created_at) %>
 			</div>
 			<hr>
-			
+		<% end %>
+	<% else %>
+		<%= form_for([@question, @question.answers.build]) do |form| %>
+			<div class="field">
+				<%# form.label :text %>
+				<%= form.text_area :text, id: :answer_text, placeholder: 'Your answer', style: "width: 100%;" %>
+			</div>
+
+			<div class="field">
+				<%= form.hidden_field :user_id, value: current_user.id %>
+			</div>
+
+			<div class="actions">
+				<%= form.submit "Answer now and earn #{money(@question.price)}", class: "btn btn-post btn-block cursor" %>
+			</div>
 		<% end %>
 	<% end %>
 
-	<%= form_for([@question, @question.answers.build]) do |form| %>
-		<div class="field">
-			<%# form.label :text %>
-			<%= form.text_area :text, id: :answer_text, placeholder: 'Your answer', style: "width: 100%;" %>
-		</div>
-
-		<div class="field">
-			<%= form.hidden_field :user_id, value: current_user.id %>
-		</div>
-
-		<div class="actions">
-			<%= form.submit "Post", class: "btn btn-post btn-block cursor" %>
-		</div>
-	<% end %>
 
 	<div class="link-yellow">
 		<br>

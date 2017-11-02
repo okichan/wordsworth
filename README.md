@@ -6,9 +6,9 @@ So for my Rails app project I have decided to create a two-sided marketplace bet
 Why?
 
 Because this is based on my work experience where I was paid to translate some documents from Japanese to English for business purposes. 
-Altough I am not a professional translator, I was actually enjoying the task (in fact I once thought of becoming a translator) so I thought it would be good if there is a portal specifically for translations.
+Although I am not a professional translator, I was actually enjoying the task (in fact I once thought of becoming a translator) so I thought it would be good if there is a portal for business people who need decent translations and translators who want to earn some.
 
-Detailed User Story can be found in Trello. 
+Detailed User Story can be found in Trello below.
 
 ## User story
 
@@ -24,7 +24,7 @@ For font pairing, I was first to mix serif and sans-serif but sans-serif just di
 
 ## ERD
 
-I found this service called SmartDraw which I found better visualised than DBdesigner.
+I found this service called SmartDraw which in my opinion better visualised than DBdesigner.
 
 ![DBdesigner](app/assets/images/erd.png "DBdesigner")
 ![SmartDraw](https://github.com/okichan/wordsworth/blob/master/app/assets/images/erd2.PNG "SmartDraw")
@@ -40,8 +40,8 @@ I found this service called SmartDraw which I found better visualised than DBdes
 ## Struggles and lessons learnt
 ### Shrine!!! 
 - Upload failed all the time. It took me several days to investigate the cause and finally discovered that it had to do with JPG's image resizing error with Shrine's dependencies (ImageMagick I think, it wasn't even Shrine's fault after all).
-- Although now I know where the error comes from and it is to do with with resizing feature's version, I wasn't able to fix it.
-- So I disabled resizing function for a temporary fix.
+- Although now I know where the error comes from and it is to do with the discrepancies in build version, I wasn't able to fix it.
+- So I disabled resizing function for a temporary fix. At least I made it work!
 
 ### I thought I had planned well.
 - I was first thinking of Stack Overflow kind of portal where a question can have multiple answers, however the more I work on it the clearer it became that this is not going to work out as I planned.

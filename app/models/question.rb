@@ -3,6 +3,7 @@ class Question < ApplicationRecord
   has_many :answers
   validates :title, presence: true
   validates :text, presence: true
+  validates :price, numericality: { greater_than_or_equal_to: 1 }
 
    LANG_OPTIONS = [ "Arabic", 
    "Cantonese", 
