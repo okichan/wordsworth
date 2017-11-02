@@ -62,6 +62,8 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "wordsworth_#{Rails.env}"
   config.action_mailer.perform_caching = false
   config.action_mailer.delivery_method = :mailgun
+  config.action_mailer.default_url_options = { host: 'wordsworth.herokuapp.com' }
+  
   # config.action_mailer.mailgun_settings = {domain: 'sandboxa72ccf6e4c3c419095791fde7c5e7df0.mailgun.org'}
   config.action_mailer.mailgun_settings = {
 		api_key: ENV.fetch('MAILGUN_API_KEY'),
