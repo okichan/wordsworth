@@ -1,4 +1,4 @@
-<div class='col col-md-8 offset-md-2'>
+<div class='col col-md-8 offset-md-2 link-yellow'>
 	
 	<div class="row">
 		<div class="col-sm-9">
@@ -14,7 +14,7 @@
 		<p><%= simple_format(@question.text) %></p>
 	</div>
 
-	<div class="link-yellow text-right">
+	<div class=" text-right">
 		<% if current_user.present? && current_user.id == @question.user_id %>
 			<%= link_to '[Edit]', edit_question_path(@question) %> <br>
 		<% end %>
@@ -26,7 +26,7 @@
 		</div>
 
 		<div class='col'>
-			<p class="link-yellow text-right">
+			<p class=" text-right">
 				<strong>requested</strong>
 				<%= format_time(@question.created_at) %><br>
 				<% if Profile.find(@question.user_id).image_url(:small).present? %>
@@ -45,11 +45,18 @@
 		<h3><br>Translated.</h3>
 		<% @question.answers.order(created_at: 'desc').each do |a| %>
 			<p><%= simple_format(a.text) %></p>
-			<div class="text-right">
-				<%= format_time(a.created_at) %>
+			<div class="text-right ">
+				<%= format_time(a.created_at) %><br>
+				<% if User.find(a.user_id).profile.image_url.present? %>
+					<%= image_tag User.find(a.user_id).profile.image_url, class: 'avatar-small' %>
+				<% else %>
+					<%= image_tag 'default_avatar.jpg', class:"avatar-small" %>
+				<% end %>
+				<%= link_to User.find(a.user_id).username, profile_path(a.user_id) %>
 			</div>
 			<hr>
 		<% end %>
+
 	<% else %>
 		<%= form_for([@question, @question.answers.build]) do |form| %>
 			<div class="field">
@@ -68,7 +75,7 @@
 	<% end %>
 
 
-	<div class="link-yellow">
+	<div class="">
 		<br>
 		<%# link_to 'Delete', @question, method: :delete, data: { confirm: 'Are you sure?' } %>
 		<%= link_to 'Back', questions_path %>
