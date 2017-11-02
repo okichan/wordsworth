@@ -24,7 +24,7 @@
 
 			<br>
 
-			<% if !@profile.bio.empty? %>
+			<% if !@profile.bio.nil? %>
 				<div class='quote'>
 					<p><%= simple_format(@profile.bio) %></p>
 				</div>
