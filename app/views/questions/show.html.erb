@@ -1,3 +1,4 @@
+<% provide(:title, "Question") %>
 <div class='col col-md-8 offset-md-2 link-yellow'>
 	
 	<div class="row">
@@ -29,12 +30,8 @@
 			<p class=" text-right">
 				<strong>requested</strong>
 				<%= format_time(@question.created_at) %><br>
-				<% if Profile.find(@question.user_id).image_url(:small).present? %>
-					<%= image_tag Profile.find(@question.user_id).image_url(:small), class: 'avatar-small' %>
-				<% else %>
-					<%= image_tag 'default_avatar.jpg', class:"avatar-small" %>
-				<% end %>
-				<%= link_to User.find(@question.user_id).username, profile_path(@question.user_id) %>
+					<%= image_tag(check_avatar(@question.user.profile), class: 'avatar-small') %>
+				<%= link_to @question.user.username, profile_path(@question.user_id) %>
 			</p>
 		</div>
 	</div>
@@ -43,16 +40,12 @@
 	
 	<% if @question.answers.any? %>
 		<h3><br>Translated.</h3>
-		<% @question.answers.order(created_at: 'desc').each do |a| %>
+		<% @question.answers.each do |a| %>
 			<p><%= simple_format(a.text) %></p>
 			<div class="text-right ">
 				<%= format_time(a.created_at) %><br>
-				<% if User.find(a.user_id).profile.image_url.present? %>
-					<%= image_tag User.find(a.user_id).profile.image_url, class: 'avatar-small' %>
-				<% else %>
-					<%= image_tag 'default_avatar.jpg', class:"avatar-small" %>
-				<% end %>
-				<%= link_to User.find(a.user_id).username, profile_path(a.user_id) %>
+					<%= image_tag(check_avatar(a.user.profile), class: 'avatar-small') %>
+				<%= link_to a.user.username, profile_path(a.user_id) %>
 			</div>
 			<hr>
 		<% end %>
@@ -73,7 +66,6 @@
 			</div>
 		<% end %>
 	<% end %>
-
 
 	<div class="">
 		<br>

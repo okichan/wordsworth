@@ -20,16 +20,32 @@ class ConversationsController < ApplicationController
   def new
     @conversation = Conversation.new
   end
-
+  
   # GET /conversations/1/edit
   def edit
   end
-
+  
   # POST /conversations
   # POST /conversations.json
   def create
     @conversation = Conversation.new(conversation_params)
     @conversation.user1 = current_user
+
+    # @test = Conversation.where(:user1_id => current_user.id)
+    # @test = Conversation.where(:user2_id => current_user.id)
+    # if Conversation.find(:all, :conditions => ["user1_id = ? and user2_id = ?", self.user1_id, self.user2_id]).any?
+    #   raise 'some error'
+    # end
+
+    # user_a = current_user
+    # user_b = Profile.find(1)
+  
+    # if user_a.id < user_b.id
+    #   @conversation.user1 = user_a 
+    # else
+    #   @conversation.user2 = user_a 
+    #   @conversation.user1 = user_b 
+    # end
 
     respond_to do |format|
       if @conversation.save
@@ -78,6 +94,6 @@ class ConversationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def conversation_params
-      params.require(:conversation).permit(:user2_id)
+      params.require(:conversation).permit(:user2_id, :user1_id)
     end
 end

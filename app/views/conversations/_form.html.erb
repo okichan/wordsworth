@@ -1,7 +1,7 @@
 <%= form_with(model: conversation, local: true) do |form| %>
   <% if conversation.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(conversation.errors.count, "error") %> prohibited this conversation from being saved:</h2>
+      <h4><%= pluralize(conversation.errors.count, "error") %> prohibited this conversation from being saved:</h4>
 
       <ul>
       <% conversation.errors.full_messages.each do |message| %>
@@ -11,16 +11,20 @@
     </div>
   <% end %>
 
-  <!--
   <div class="field">
     <%= form.label :user1_id %>
-    <%= form.text_field :user1_id, id: :conversation_user1_id %>
+    <%= form.text_field :user1_id, id: :conversation_user1_id, value: current_user.id %>
   </div>
-  -->
 
+  <!--
   <div class="field">
     <%= form.label :user2_id %>
-    <%= form.collection_select :user2_id, User.all, :id, :username, id: :conversation_user2_id %>
+    <%= form.collection_select :user2_id, exclude_self, :id, :username, id: :conversation_user2_id %>
+  </div>
+  -->
+  <div class="field">
+    <%= form.label :user2_id %>
+    <%= form.text_field :user2_id, id: :conversation_user2_id, value: params[:receiver_id] %>
   </div>
 
   <div class="actions">

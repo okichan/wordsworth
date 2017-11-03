@@ -1,15 +1,12 @@
+<% provide(:title, "Profile") %>
+
 <div class="row">
 	<div class="col col-md-4 offset-md-1">
 
 		<div class="text-center link-yellow" >
-			<% if @profile.image.present? %>
-				<%= image_tag @profile.image_url(:original), class:"avatar" %>
-			<% else %>
-				<%= image_tag 'default_avatar.jpg', class:"avatar" %>
-			<% end %>
-			
+			<%= image_tag check_avatar(@profile), class:"avatar" %>
 			<% unless @profile.user.id == current_user.id %>
-				<p><%= link_to 'Contact this person', new_conversation_path(params[@profile]) %>  </p>
+				<p><%= link_to 'Contact this person', new_conversation_path(receiver_id: @profile.id) %>  </p>
 			<% else %>
 				<p style="text-decoration: line-through;">Contact this person</p>
 				This is you!
@@ -32,7 +29,7 @@
 
 			<br>
 
-			<% if !@profile.bio.nil? %>
+			<% if @profile.bio.present? %>
 				<div class='quote'>
 					<p><%= simple_format(@profile.bio) %></p>
 				</div>
@@ -44,12 +41,3 @@
 
 	</div>
 </div>
-	<!--
-	<p>
-		<strong>User:</strong>
-	</p>
-	-->
-
-
-
-

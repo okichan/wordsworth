@@ -14,12 +14,13 @@
             <!-- if not rendered in Profile show page -->
             <% if @prof_self.nil? %>
                 <li class="list-inline-item">
-                    <%= link_to current_user.profile.image_url.nil? ? current_user.username : image_tag(current_user.profile.image_url, class:"avatar-small", title: current_user.username), profile_path(@profile.id) %>
+                    <%= link_to image_tag(check_avatar(current_user.profile), class: "avatar-small", 
+                    title: current_user.username), profile_path(@profile.id) %>
                 </li>
                 <li class="list-inline-item"><%# link_to current_user.username, profile_path(@profile.id) %></li>
             <!-- if rendered in Profile show page -->
             <% else %>
-                <li class="list-inline-item"><%= link_to Profile.find(@prof_self.id).image_url.nil? ? current_user.username : image_tag(Profile.find(@prof_self.id).image_url, class:"avatar-small", title: current_user.username), profile_path(@prof_self.id) %></li>
+                <li class="list-inline-item"><%= link_to image_tag(check_avatar(Profile.find(@prof_self.id)), class:"avatar-small", title: current_user.username), profile_path(@prof_self.id) %></li>
                 <li class="list-inline-item"><%# link_to current_user.username, profile_path(@prof_self.id) %></li>
             <% end %>
             <%= link_to image_tag('envelope.png', width: 30, title: 'View messages'), conversations_path %> &#160;&#160;&#160;

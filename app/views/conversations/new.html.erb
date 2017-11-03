@@ -1,5 +1,9 @@
+<% provide(:title, "New conversation") %>
+
 <h1>New Conversation</h1>
 
 <%= render 'form', conversation: @conversation %>
 
-<%= link_to 'Back', conversations_path %>
+<div class="link-yellow">
+    <%= link_to 'Back', url_for(:back) %>
+</div>

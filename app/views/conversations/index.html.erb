@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<% provide(:title, "All conversations") %>
 
 <div class="row justify-content-center link-yellow">
 	<div class="col-md-8 table-responsive">
@@ -7,7 +7,7 @@
 		<table class="table table-hover">
 			<thead>
 				<tr>
-					<th>Convo id</th>
+					<th>id</th>
 					<th>with</th>
 					<th>Date</th>
 				</tr>
@@ -20,11 +20,11 @@
 
 						<% if conversation.user1.id == current_user.id %>
 						  <td> 
-							<%= image_tag(conversation.user2.profile.image_url, class: "avatar-small") if conversation.user2.profile.image_url.present? %>
+							<%= image_tag(check_avatar(conversation.user2.profile), class: 'avatar-small') %>
 							<%= conversation.user2.username %>
 						  </td>
 						<% else %>
-						  <td> <%= image_tag(conversation.user1.profile.image_url, class: "avatar-small") if conversation.user1.profile.image_url.present? %> <%= conversation.user1.username %></td>
+						  <td> <%= image_tag(check_avatar(conversation.user1.profile), class: "avatar-small") %> <%= conversation.user1.username %></td>
 						<% end %>
 
 						<td><%= format_time(conversation.updated_at) %></td>
