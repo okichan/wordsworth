@@ -1,42 +1,26 @@
-<div class="row">
-	<div class="col col-md-4 offset-md-2">
+<div class="row justify-content-center">
+	<div class="col-sm-4">
 		<div class="btn btn-primary btn-block btn-lg btn-top"><%= link_to 'New request', new_question_path %></div>
 	</div>
 </div>
 <br>
 
-<!--
-<div class="row">
-	<div class="col col-md-8 offset-md-2">
-		<h3 class="latest-question">Latest question</h3>
-		<h3 class="link-yellow"><%= link_to @questions.first.title, @questions.first %></h3>
-		<div class="question-body">
-			<a href=/questions/<%= @questions.first.id %>>
-				<%= simple_format(@questions.first.text) %>
-			</a>
-		</div>
-		<div class='right'>Posted at: <%= format_time(@questions.first.created_at) %></div>
+
+<div class="row justify-content-center">
+	<div class="col-md-8 table-responsive">
+		<table class="table table-hover">
+			<% @questions.each do |question| %>
+				<tr>
+					<td class="col-xs-8"><%= link_to question.title, question %></td>
+					<%# question.title %>
+					<td class="text-center col-xs-3" ><%= money(question.price) %></td>
+					<td><%= question.lang_from %> &#9658; <%= question.lang_to %></td>
+					<%# link_to 'Edit', edit_question_path(question) %>
+					<%# link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %>
+				</tr>
+			<% end %>
+		</table>
 	</div>
-</div>
-<br>
-
--->
-
-<div class="row">
-<div class="col col-md-8 offset-md-2">
-	<table>
-		<% @questions.each do |question| %>
-			<tr>
-				<td><%= link_to question.title, question %></td>
-				<%# question.title %>
-				<td class="text-center"><%= money(question.price) %></td>
-				<td><%= question.lang_from %> &#9658; <%= question.lang_to %></td>
-				<%# link_to 'Edit', edit_question_path(question) %>
-				<%# link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %>
-			</tr>
-		<% end %>
-	</table>
-</div>
 </div>
 
 

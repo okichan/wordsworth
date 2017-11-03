@@ -1,27 +1,36 @@
-<h1>Messages</h1>
+<div class="row justify-content-center link-yellow">
+	<div class="col-md-8 table-responsive">
+		<h1>Messages</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>?</th>
-      <th>Sender</th>
-      <th>Content</th>
-      <th>Date</th>
-    </tr>
-  </thead>
+		<table>
+			<thead>
+				<tr>
+					<th>?</th>
+					<th>Sender</th>
+					<th>user id</th>
+					<th>Content</th>
+					<th>Date</th>
+				</tr>
+			</thead>
 
-  <tbody>
-    <% @messages.each do |message| %>
-      <tr>
-        <td><%= message %></td>
-        <td><%= message.sender.username %></td>
-        <td><%= message.content %></td>
-        <td><%= format_time(message.created_at) %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+			you are: <%= current_user.id %>
+			<tbody>
+				<% @messages.each do |message| %>
+					<tr>
+						<td><%= message.inspect %></td>
+						<td><%= message.sender.username %></td>
+						<td><%= message.sender.id %></td>
+						<td><%= message.content %></td>
+						<td><%= format_time(message.created_at) %></td>
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
 
-<br>
+		<br>
 
-<%= link_to 'New Message', new_conversation_message_path(@conversation) %>
+		<%= link_to 'New Message', new_conversation_message_path(@conversation) %> |
+		<%= link_to 'Back to all conversations', conversations_path %>
+
+	</div>
+</div>

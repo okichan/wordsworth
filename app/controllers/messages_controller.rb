@@ -7,8 +7,7 @@ class MessagesController < ApplicationController
   # GET /messages
   # GET /messages.json
   def index
-    as1 = Message.where(sender_id: current_user)
-    @messages = as1
+    @messages = Message.where(conversation_id: @conversation.id).order(created_at: :desc)
   end
 
   # GET /messages/1
