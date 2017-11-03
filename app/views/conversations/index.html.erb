@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Conversations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Room</th>
+      <th>User1</th>
+      <th>User2</th>
+      <th>Date</th>
+      <th></th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @conversations.each.with_index(1) do |conversation, i| %>
+      <tr>
+        <td><%= i %></td>
+        <td><%= conversation.user1.username %></td>
+        <td><%= conversation.user2.username %></td>
+        <td><%= format_time(conversation.updated_at) %></td>
+        <td><%= link_to 'Show', conversation_messages_path(conversation) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Conversation', new_conversation_path %>

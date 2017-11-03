@@ -1,7 +1,7 @@
 class QuestionsController < ApplicationController
+  before_action :authenticate_user!, :except => [:index]
   before_action :set_question, only: [:show, :edit, :update, :destroy]
   before_action :set_profile
-  before_action :authenticate_user!, :except => [:index]
 
   # GET /questions
   # GET /questions.json

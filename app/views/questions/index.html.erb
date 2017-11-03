@@ -30,7 +30,7 @@
 				<td><%= link_to question.title, question %></td>
 				<%# question.title %>
 				<td class="text-center"><%= money(question.price) %></td>
-				<td><%= question.lang_from %> > <%= question.lang_to %></td>
+				<td><%= question.lang_from %> &#9658; <%= question.lang_to %></td>
 				<%# link_to 'Edit', edit_question_path(question) %>
 				<%# link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %>
 			</tr>

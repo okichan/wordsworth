@@ -7,12 +7,19 @@
 			<% else %>
 				<%= image_tag 'default_avatar.jpg', class:"avatar" %>
 			<% end %>
-			<p><%= link_to 'Contact this person', 'path' %>  </p>
+			
+			<% unless @profile.user.id == current_user.id %>
+				<p><%= link_to 'Contact this person', new_conversation_path(params[@profile]) %>  </p>
+			<% else %>
+				<p style="text-decoration: line-through;">Contact this person</p>
+				This is you!
+			<% end %>
+			  
 		</div>
 	</div>
 
 	<div class="col-md-5 link-yellow">
-			<h2 class="profile-username"><%= User.find(@profile.user_id).username %></h2>
+			<h2 class="profile-username"><%= @profile.user.username %></h2>
 			
 			<div class='stats-wrapper'>
 				<div class="stats">
