@@ -1,4 +1,5 @@
 class ProfilesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
 
   # GET /profiles
@@ -10,6 +11,8 @@ class ProfilesController < ApplicationController
     @prof_self = Profile.find(current_user.id)
     @users_questions = Question.where(user_id: @profile.user_id)
     @users_answers = Answer.where(user_id: @profile.user_id)
+    @conversation = Conversation.new
+    
   end
 
   # GET /profiles/new

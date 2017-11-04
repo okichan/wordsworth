@@ -58,11 +58,19 @@
 			</div>
 
 			<div class="field">
-				<%= form.hidden_field :user_id, value: current_user.id %>
+				<% if signed_in? %>
+					<%= form.text_area :user_id, value: current_user.id %>
+				<% end %>
 			</div>
 
 			<div class="actions">
-				<%= form.submit "Answer now and earn #{money(@question.price)}", class: "btn btn-post btn-block cursor" %>
+				<% if signed_in? %>
+					<%= form.submit "Answer now and earn #{money(@question.price)}", class: "btn btn-post btn-block btn-lg cursor" %>
+				<% else %>
+					<div class="text-center h3">
+						<%= link_to "Can translate? Log in now and earn #{money(@question.price)}!", new_user_session_path, class: "text-center" %>
+					</div>
+				<% end %>
 			</div>
 		<% end %>
 	<% end %>

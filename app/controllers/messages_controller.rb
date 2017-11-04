@@ -26,7 +26,7 @@ class MessagesController < ApplicationController
   
     respond_to do |format|
       if @message.save
-        format.html { redirect_to conversation_messages_url, notice: 'Message was successfully created.' }
+        format.html { redirect_to conversation_messages_url(anchor: 'bottom') }
         format.json { render :show, status: :created, location: @message }
       else
         format.html { redirect_to conversation_messages_url, notice: 'Message is empty!' }

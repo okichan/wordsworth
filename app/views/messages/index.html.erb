@@ -3,26 +3,26 @@
 
 <div class="row justify-content-center link-yellow">
 	<div class="col-md-8 table-responsive">
-		<h1>Messages</h1>
-			<% @messages.each do |message| %>
-				<div class="<%= message.sender == current_user ? 'text-left' : 'text-right' %>">
-					<%= message.sender == current_user ? image_tag(check_avatar(current_user.profile), class: "avatar-small") : image_tag(check_avatar(message.sender.profile), class: "avatar-small") %>
-					<em><%= message.sender.username %></em>
-					<h5><%= simple_format(message.content) %></h5>
-					<small><%= format_time(message.created_at) %></small>
-					<hr>
-				</div>
-			<% end %>
+		<% @messages.each do |message| %>
+			<div class="<%= message.sender == current_user ? 'text-left' : 'text-right' %>">
+				<%= message.sender == current_user ? 
+				link_to(image_tag(check_avatar(current_user.profile), class: "avatar-small"), profile_path(@profile)) : 
+				link_to(image_tag(check_avatar(message.sender.profile), class: "avatar-small"), profile_path(message.sender.id)) %>
+				<em><%= message.sender.username %></em>
+				<h5><%= simple_format(message.content) %></h5>
+				<small><%= format_time(message.created_at) %></small>
+				<hr>
+			</div>
+		<% end %>
 
 		<%= form_for ([@conversation, @conversation.messages.build]) do |f| %>
-			<p>
+			<p id="bottom">
 			<%= f.text_area :content %>
 			</p>
 			
 			<p><%= f.submit %></p>
 		<% end %>
 
-		<%= link_to 'New Message', new_conversation_message_path(@conversation) %> |
 		<%= link_to 'Back to all conversations', conversations_path %>
 	</div>
 </div>

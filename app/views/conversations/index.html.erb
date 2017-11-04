@@ -9,6 +9,7 @@
 				<tr>
 					<th>id</th>
 					<th>with</th>
+					<th> </th>
 					<th>Date</th>
 				</tr>
 			</thead>
@@ -26,17 +27,17 @@
 						<% else %>
 						  <td> <%= image_tag(check_avatar(conversation.user1.profile), class: "avatar-small") %> <%= conversation.user1.username %></td>
 						<% end %>
-
-						<td><%= format_time(conversation.updated_at) %></td>
+						<td>
+							<%= conversation.messages.any? ? conversation.messages.last.content : '(empty)' %>
+						</td>
+						<td>
+							<%= conversation.messages.any? ? format_time(conversation.messages.last.created_at) : '' %>
+						</td>
 						
 					</tr>
 				<% end %>
 			</tbody>
 		</table>
-
-		<br>
-
-		<%= link_to 'New Conversation', new_conversation_path %>
 
 	</div>
 </div>

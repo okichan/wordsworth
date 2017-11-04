@@ -16,9 +16,14 @@ body {
 }
 
 .landing-logo {
-    margin: 50px;
+    margin-top: 50px;
     font-family: 'Tangerine', cursive;
     font-size: 4.5em;
+    // line-height: 0.2;
+}
+
+.space-bottom {
+    margin-bottom: 40px;
 }
 
 .landing-logo a {

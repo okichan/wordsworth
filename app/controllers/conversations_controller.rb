@@ -8,7 +8,7 @@ class ConversationsController < ApplicationController
   def index
     as1 = Conversation.where(user1: current_user)
     as2 = Conversation.where(user2: current_user)
-    @conversations = as1 | as2
+    @conversations = (as1 | as2).sort!
   end
 
   # GET /conversations/1
@@ -49,7 +49,7 @@ class ConversationsController < ApplicationController
 
     respond_to do |format|
       if @conversation.save
-        format.html { redirect_to @conversation, notice: 'Conversation was successfully created.' }
+        format.html { redirect_to conversations_path, notice: 'Conversation was successfully created.' }
         format.json { render :show, status: :created, location: @conversation }
       else
         format.html { render :new }

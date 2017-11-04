@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-  before_action :authenticate_user!, :except => [:index]
+  before_action :authenticate_user!, :except => [:index, :show]
   before_action :set_question, only: [:show, :edit, :update, :destroy]
   before_action :set_profile
 
@@ -38,7 +38,7 @@ class QuestionsController < ApplicationController
         format.json { render :show, status: :created, location: @question }
       else
         format.html { render :new }
-        format.json { render json: @question.errors, status: :unprocessable_entity }
+        format.json { render json: @question.errors, status: :unprocessable_entity, notice: 'yesy' }
       end
     end
   end
@@ -71,6 +71,10 @@ class QuestionsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_question
       @question = Question.find(params[:id])
+    end
+
+    def set_user
+      @user = current_user if signed_in?
     end
 
     def set_profile
