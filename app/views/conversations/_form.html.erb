@@ -11,12 +11,12 @@
     </div>
   <% end %>
 
+  <!--
   <div class="field">
     <%= form.label :user1_id %>
-    <%= form.text_field :user1_id, id: :conversation_user1_id, value: current_user.id %>
+    <%= form.text_field :user1_id, id: :conversation_user1_id %>
   </div>
 
-  <!--
   <div class="field">
     <%= form.label :user2_id %>
     <%= form.collection_select :user2_id, exclude_self, :id, :username, 
@@ -24,11 +24,10 @@
   </div>
   -->
   <div class="field">
-    <%= form.label :user2_id %>
-    <%= form.text_field :user2_id, id: :conversation_user2_id, value: @profile.id %>
+    <%= form.hidden_field :user2_id, id: :conversation_user2_id, value: params[:id] %>
   </div>
 
   <div class="actions">
-    <%= form.submit "My Submit Text" %>
+    <%= form.submit "Contact this person", class: "btn btn-post btn-lg cursor" %>
   </div>
 <% end %>

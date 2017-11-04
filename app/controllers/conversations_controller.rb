@@ -19,6 +19,7 @@ class ConversationsController < ApplicationController
   # GET /conversations/new
   def new
     @conversation = Conversation.new
+    set_profile_test
   end
   
   # GET /conversations/1/edit
@@ -30,49 +31,18 @@ class ConversationsController < ApplicationController
   def create
     @conversation = Conversation.new(conversation_params)
     @conversation.user1 = current_user
-
-    # @test = Conversation.where(:user1_id => current_user.id)
-    # @test = Conversation.where(:user2_id => current_user.id)
-    # if Conversation.find(:all, :conditions => ["user1_id = ? and user2_id = ?", self.user1_id, self.user2_id]).any?
-    #   raise 'some error'
-    # end
-
-    # user_a = current_user
-    # user_b = Profile.find(1)
-  
-    # if user_a.id < user_b.id
-    #   @conversation.user1 = user_a 
-    # else
-    #   @conversation.user2 = user_a 
-    #   @conversation.user1 = user_b 
-    # end
-
+    
     respond_to do |format|
       if @conversation.save
         format.html { redirect_to conversations_path, notice: 'Conversation was successfully created.' }
         format.json { render :show, status: :created, location: @conversation }
       else
-        format.html { render :new }
+        format.html { redirect_to conversations_path, notice: 'Conversation with this user already exists!' }
         format.json { render json: @conversation.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # PATCH/PUT /conversations/1
-  # PATCH/PUT /conversations/1.json
-  def update
-    respond_to do |format|
-      if @conversation.update(conversation_params)
-        format.html { redirect_to @conversation, notice: 'Conversation was successfully updated.' }
-        format.json { render :show, status: :ok, location: @conversation }
-      else
-        format.html { render :edit }
-        format.json { render json: @conversation.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /conversations/1
   # DELETE /conversations/1.json
   def destroy
     @conversation.destroy

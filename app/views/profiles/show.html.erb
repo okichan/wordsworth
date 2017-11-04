@@ -5,10 +5,8 @@
 
 		<div class="text-center link-yellow" >
 			<%= image_tag check_avatar(@profile), class:"avatar" %>
-			<% if @profile.user.id == current_user.id %>
-			  <p>This is you!</p>
-			<% else %>
-			<p><%= link_to( 'Contact this person', new_conversation_path(receiver_id: @profile.user.id)) %></p>
+			<% if @profile.user.id != current_user.id %>
+				<p></p>
 				<%= render '/conversations/form', conversation: @conversation %>
 			<% end %>
 			

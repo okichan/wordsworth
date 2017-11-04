@@ -28,12 +28,14 @@
 						  <td> <%= image_tag(check_avatar(conversation.user1.profile), class: "avatar-small") %> <%= conversation.user1.username %></td>
 						<% end %>
 						<td>
-							<%= conversation.messages.any? ? conversation.messages.last.content : '(empty)' %>
+							<%= conversation.messages.any? ? conversation.messages.last.content.truncate(34, separator: ' ') : '(empty)' %>
 						</td>
 						<td>
 							<%= conversation.messages.any? ? format_time(conversation.messages.last.created_at) : '' %>
 						</td>
-						
+						<td>
+							<%= link_to 'delete', conversation_path(conversation), method: :delete, data: { confirm: "Delete this?"} %>
+						</td>
 					</tr>
 				<% end %>
 			</tbody>
