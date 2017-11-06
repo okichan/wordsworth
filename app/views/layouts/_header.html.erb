@@ -12,6 +12,7 @@
     <nav>
         <ul class="navbar-right list-inline header-menu">
         <% if signed_in? %>
+            <%= link_to 'Your requests', charges_path %>
 
             <!-- if not rendered in Profile show page -->
             <% if @prof_self.nil? %>

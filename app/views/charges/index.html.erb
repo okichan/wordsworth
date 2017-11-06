@@ -1,0 +1,24 @@
+Your translation requests
+
+<table>
+	<thead>
+		<tr>
+			<th>title</th>
+			<th>text</th>
+			<th>date</th>
+			<th>pay</th>
+		</tr>
+	</thead>        
+	<tbody>
+		<% @questions.each do |q| %>
+			<tr>
+				<td><%= link_to q.title, question_path(q) %></td>
+				<td><%= q.text.truncate(34, separator: ' ') %></td>
+				<td><%= q.created_at %></td>
+				<td>
+					<%= link_to 'Pay', new_charge_path(price: q.price) %>
+				</td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>

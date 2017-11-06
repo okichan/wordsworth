@@ -7,11 +7,19 @@
 	<div class='search-wrapper'>
 		<%= search_form_for @q, url: search_questions_path, html: { method: :post } do |f| %>
 			<%= f.label "From" %>
-			<%= f.select :lang_from_eq, options_for_select(Question::LANG_OPTIONS),:include_blank => true %>&#160;&#160;
+			<%= f.select :lang_from_eq, options_for_select(Question::LANG_OPTIONS), :include_blank => true %>&#160;&#160;
 			<%= f.label "To" %>
 			<%= f.select :lang_to_eq, options_for_select(Question::LANG_OPTIONS), :include_blank => true %>
 			<%= image_submit_tag('search.png', id: 'search-icon') %>
-	<% end %>
+		<% end %>
+		
+		<script type="text/javascript">
+			$(function() {
+				$('#q_lang_to_eq').change(function() {
+					this.form.submit();
+				});
+			});	
+		</script>
 	</div>
 </div>
 

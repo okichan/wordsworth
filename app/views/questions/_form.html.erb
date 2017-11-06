@@ -36,9 +36,9 @@
 
 	<div class="field">
 		<%= form.label 'From: ' %>
-		<%= form.select(:lang_from, options_for_select(Question::LANG_OPTIONS, selected: form.object.lang_from) ) %>
+		<%= form.select(:lang_from, options_for_select(Question::LANG_OPTIONS, selected: form.object.lang_from), :include_blank => true) %>
 		<%= form.label 'To: ' %>
-		<%= form.select(:lang_to, options_for_select(Question::LANG_OPTIONS, selected: form.object.lang_to)) %>
+		<%= form.select(:lang_to, options_for_select(Question::LANG_OPTIONS, selected: form.object.lang_to), :include_blank => true) %>
 	</div>
 
 	<div class="field row">

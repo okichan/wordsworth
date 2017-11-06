@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'landing#index'
+  resources :charges
+  
   resources :conversations do
     resources :messages
   end

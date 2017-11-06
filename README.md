@@ -34,6 +34,7 @@ I found this service called SmartDraw which in my opinion better visualised than
 - Devise
 - Shrine and its dependencies
 - Dotenv
+- Stripe
 - Rspec
 - Mailgun
 - Ransack

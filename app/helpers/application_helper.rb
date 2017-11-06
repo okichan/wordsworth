@@ -31,6 +31,5 @@ module ApplicationHelper
     def leftright
         style='border: 2px dotted red;'
     end
-    
-    
+
 end

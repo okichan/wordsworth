@@ -22,16 +22,26 @@ class QuestionsController < ApplicationController
 	# GET /questions/1.json
 	def show
 		@answer = Answer.new unless @answer
-	end
-
+	end	
+	
 	# GET /questions/new
 	def new
 		@user = current_user
 		@question = Question.new
-	end
-
+		# @amount = 44444
+	end	
 	# GET /questions/1/edit
 	def edit
+	end	
+	
+	def confirm
+		@question = Question.new(question_params)
+		
+		if @question.valid?
+			render :action => 'confirm'
+		else
+			render :action => 'index'
+		end
 	end
 
 	# POST /questions
@@ -39,17 +49,18 @@ class QuestionsController < ApplicationController
 	def create
 		@user = current_user
 		@question = Question.new(question_params)
-
+		@amount = Question.last.price
+		
 		respond_to do |format|
 			if @question.save
-				format.html { redirect_to @question, notice: 'Question was successfully created.' }
+				format.html { redirect_to new_charge_path, notice: 'Question was successfully created.' }
 				format.json { render :show, status: :created, location: @question }
 			else
 				format.html { render :new }
 				format.json { render json: @question.errors, status: :unprocessable_entity, notice: 'yesy' }
-			end
-		end
-	end
+			end	
+		end	
+	end	
 
 	# PATCH/PUT /questions/1
 	# PATCH/PUT /questions/1.json
@@ -61,9 +72,9 @@ class QuestionsController < ApplicationController
 			else
 				format.html { render :edit }
 				format.json { render json: @question.errors, status: :unprocessable_entity }
-			end
-		end
-	end
+			end	
+		end	
+	end	
 
 	# DELETE /questions/1
 	# DELETE /questions/1.json
@@ -72,8 +83,8 @@ class QuestionsController < ApplicationController
 		respond_to do |format|
 			format.html { redirect_to questions_url, notice: 'Question was successfully deleted.' }
 			format.json { head :no_content }
-		end
-	end
+		end	
+	end	
 
 	private
 		# Use callbacks to share common setup or constraints between actions.
