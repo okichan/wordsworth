@@ -59,7 +59,7 @@
 
 			<div class="field">
 				<% if signed_in? %>
-					<%= form.text_field :user_id, value: current_user.id %>
+					<%= form.hidden_field :user_id, value: current_user.id %>
 				<% end %>
 			</div>
 
@@ -68,7 +68,7 @@
 					<%= form.submit "Answer now and earn #{money(@question.price)}", class: "btn btn-post btn-block btn-lg cursor" %>
 				<% else %>
 					<div class="text-center h3">
-						<%= link_to "Can translate? Log in now and earn #{money(@question.price)}!", new_user_session_path, class: "text-center" %>
+						<%= link_to "Can you translate? Log in now and earn #{money(@question.price)}!", new_user_session_path, class: "text-center" %>
 					</div>
 				<% end %>
 			</div>

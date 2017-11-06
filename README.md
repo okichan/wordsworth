@@ -36,6 +36,7 @@ I found this service called SmartDraw which in my opinion better visualised than
 - Dotenv
 - Rspec
 - Mailgun
+- Ransack
 
 ## Struggles and lessons learnt
 ### Shrine!!! 

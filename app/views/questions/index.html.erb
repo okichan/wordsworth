@@ -6,15 +6,35 @@
 <br>
 
 
+
+
 <div class="row justify-content-center">
-	<div class="col-md-8 table-responsive">
+	<%= search_form_for @q do |f| %>
+
+		<%= f.label "Search by 'from' language" %>
+		<%= f.search_field :lang_from_cont %>
+		<%= image_submit_tag('search.png', :name => 'nil', width: 30) %><br>
+	<% end %>
+
+	<div class="col-md-8 table-responsive link-yellow">
 		<table class="table table-hover">
+			<thead>
+			<tr>
+				<th> </th>
+				<th><%= sort_link(@q, :price) %></th>
+				<th><%= sort_link(@q, :lang_from) %></th>
+				<th><%= sort_link(@q, :lang_to) %></th>
+				<th><%= sort_link(@q, :created_at) %></th>
+			</tr>
+			</thead>
 			<% @questions.each do |question| %>
 				<tr>
 					<td class="col-xs-8"><%= link_to question.title, question %></td>
 					<%# question.title %>
 					<td class="text-center col-xs-3" ><%= money(question.price) %></td>
-					<td><%= question.lang_from %> &#9658; <%= question.lang_to %></td>
+					<td><%= question.lang_from %></td>
+					<td><%= question.lang_to %></td>
+					<td><%= format_time(question.created_at) %></td>
 					<%# link_to 'Edit', edit_question_path(question) %>
 					<%# link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %>
 				</tr>
@@ -22,11 +42,3 @@
 		</table>
 	</div>
 </div>
-
-
-<br>
-
-
-<br>
-
-<%# link_to 'Log out', destroy_user_session_path, method: :delete %>

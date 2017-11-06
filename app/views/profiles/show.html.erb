@@ -8,6 +8,8 @@
 			<% if @profile.user.id != current_user.id %>
 				<p></p>
 				<%= render '/conversations/form', conversation: @conversation %>
+			<% else %>
+				<p>This is you.</p>
 			<% end %>
 			
 		</div>

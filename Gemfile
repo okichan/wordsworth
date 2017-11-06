@@ -5,6 +5,10 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+# search gem
+gem 'ransack', github: 'activerecord-hackery/ransack'
+
+
 gem 'dotenv-rails', groups: [:development, :test]
 
 gem 'bootstrap', '~> 4.0.0.beta2.1'
@@ -20,6 +24,7 @@ gem 'fastimage'
 gem 'image_processing'
 gem 'mini_magick'
 gem 'shrine'
+
 
 
 
