@@ -79,10 +79,10 @@ header {
 }
 
 .search-wrapper {
-    margin-top: 16px;
+    // margin-top: 16px;
     position: relative;
-    width: 260px;
-    border: 0px solid #73AD21;
+    width: 100%;
+    border: 0px solid #f0f;
 }
 
 #search-icon {
@@ -235,7 +235,7 @@ textarea {
     .search-wrapper {
         margin-top: 0px;
         position: relative;
-        width: 260px;
+        width: 315px;
         border: 0px solid #73AD21;
     }
     

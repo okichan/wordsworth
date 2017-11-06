@@ -30,7 +30,7 @@ class ConversationsController < ApplicationController
   # POST /conversations.json
   def create
     @conversation = Conversation.new(conversation_params)
-    @conversation.user1 = current_user
+    # @conversation.user1 = current_user
     
     respond_to do |format|
       if @conversation.save

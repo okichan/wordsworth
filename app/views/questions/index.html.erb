@@ -1,22 +1,22 @@
-<div class="row justify-content-center">
-	<div class="col-sm-4">
+<div class="row justify-content-center space-bottom">
+	<div class="col-sm-7">
 		<div class="btn btn-primary btn-block btn-lg btn-top"><%= link_to 'New request', new_question_path %></div>
 	</div>
 </div>
-<br>
-
-
+<div class="row justify-content-center space-bottom">
+	<div class='search-wrapper'>
+		<%= search_form_for @q, url: search_questions_path, html: { method: :post } do |f| %>
+			<%= f.label "From" %>
+			<%= f.select :lang_from_eq, options_for_select(Question::LANG_OPTIONS) %>&#160;&#160;
+			<%= f.label "To" %>
+			<%= f.select :lang_to_eq, options_for_select(Question::LANG_OPTIONS) %>
+			<%= image_submit_tag('search.png', id: 'search-icon') %>
+	<% end %>
+	</div>
+</div>
 
 
 <div class="row justify-content-center">
-	<%= search_form_for @q, url: search_questions_path, html: { method: :post } do |f| %>
-		<%= f.label "From" %>
-		<%= f.search_field :lang_from_cont %>
-		<%= f.label "To" %>
-		<%= f.search_field :lang_to_cont %>
-		<%= image_submit_tag('search.png', width: 30) %><br>
-	<% end %>
-
 	<div class="col-md-8 table-responsive link-yellow">
 		<table class="table table-hover">
 			<thead>

@@ -1,12 +1,14 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
     <%= link_to "Wordsworth", '/questions', id: "header-logo" %>
 
+    <!--
     <div class="search-wrapper">
     <%= form_tag(questions_path, :method => "get", id: "search-form") do %>
         <%= text_field_tag :search, params[:search], placeholder: "Search...",  style: "margin-bottom: 0px;" %>
         <%= image_submit_tag('search.png', :name => nil, id: 'search-icon') %>
     <% end %>
     </div>
+    -->
     <nav>
         <ul class="navbar-right list-inline header-menu">
         <% if signed_in? %>

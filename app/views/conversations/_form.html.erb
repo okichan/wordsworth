@@ -11,20 +11,14 @@
     </div>
   <% end %>
 
-  <!--
   <div class="field">
-    <%= form.label :user1_id %>
-    <%= form.text_field :user1_id, id: :conversation_user1_id %>
+    <%# form.label :user1_id %>
+    <%= form.hidden_field :user1_id, id: :conversation_user1_id, value: lowest_id(current_user.id, params[:id]) %>
   </div>
 
   <div class="field">
-    <%= form.label :user2_id %>
-    <%= form.collection_select :user2_id, exclude_self, :id, :username, 
-    id: :conversation_user2_id, value: params[:receiver_id] %>
-  </div>
-  -->
-  <div class="field">
-    <%= form.hidden_field :user2_id, id: :conversation_user2_id, value: params[:id] %>
+    <%# form.label :user2_id %>
+    <%= form.hidden_field :user2_id, id: :conversation_user2_id, value: highest_id(current_user.id, params[:id]) %>
   </div>
 
   <div class="actions">
