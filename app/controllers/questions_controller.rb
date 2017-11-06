@@ -13,6 +13,11 @@ class QuestionsController < ApplicationController
 		
 	end
 
+	def search
+		index
+		render :index
+	end
+
 	# GET /questions/1
 	# GET /questions/1.json
 	def show

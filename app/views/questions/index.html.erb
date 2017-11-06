@@ -9,11 +9,12 @@
 
 
 <div class="row justify-content-center">
-	<%= search_form_for @q do |f| %>
-
-		<%= f.label "Search by 'from' language" %>
+	<%= search_form_for @q, url: search_questions_path, html: { method: :post } do |f| %>
+		<%= f.label "From" %>
 		<%= f.search_field :lang_from_cont %>
-		<%= image_submit_tag('search.png', :name => 'nil', width: 30) %><br>
+		<%= f.label "To" %>
+		<%= f.search_field :lang_to_cont %>
+		<%= image_submit_tag('search.png', width: 30) %><br>
 	<% end %>
 
 	<div class="col-md-8 table-responsive link-yellow">

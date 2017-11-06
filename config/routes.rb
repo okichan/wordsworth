@@ -7,5 +7,8 @@ Rails.application.routes.draw do
   resources :profiles, only: [:show, :edit, :update]
   resources :questions do
     resources :answers
+		collection do
+			match 'search' => 'questions#search', via: [:get, :post], as: :search
+		end
   end
 end
