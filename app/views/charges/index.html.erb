@@ -4,7 +4,7 @@
 			<% if unpaid_count > 0 %>
 				<p class="space-bottom border h5">
 					<%# image_tag 'filename' %>
-					There are <span style="color: tomato;"><%= pluralize(unpaid_count, "unpaid request") %>.</span><br>
+					You have <span style="color: tomato;"><%= pluralize(unpaid_count, "unpaid request") %>.</span><br>
 					 To publish your request(s), please click the "Pay" button.
 				</p>
 			<% end %>
