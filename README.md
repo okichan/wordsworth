@@ -55,9 +55,10 @@ I found this service called SmartDraw which in my opinion better visualised than
 
 ### Re-modelling to suit my capability.
 - Not always what I pictured took place because of my technical capability.
-- Especially integration of payment system with Stripe. Had so much 'fun' with passing params and stuff.
-- Spent so many hours to settle in where things still make sense and I feel I can accomplish.
-
+- Especially integration of payment system with Stripe. Had so much 'fun' figuring out how to pass `params`.
+- So I spent so many hours to settle in where things still make sense and the level I feel I can accomplish.
+- I gave up implementing function where it redirects back to `post` page after the payment is made via Stripe.
+- In the end I added `true`/`false` column to the databae and restrict some actions based on the boolean. (ie your post won't be published unless you pay.) 
 
 ## Challenges
 - Sometimes, well most of the time I was feeling I'm spending too many hours on something and said to myself that I might as well ask for help.

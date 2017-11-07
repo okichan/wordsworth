@@ -36,9 +36,9 @@
 			<tr>
 				<th> </th>
 				<th><%= sort_link(@q, :price) %></th>
-				<th><%= sort_link(@q, :lang_from) %></th>
-				<th><%= sort_link(@q, :lang_to) %></th>
-				<th><%= sort_link(@q, :created_at) %></th>
+				<th><%= sort_link(@q, :lang_from, "From") %></th>
+				<th><%= sort_link(@q, :lang_to, "To") %></th>
+				<th><%= sort_link(@q, :created_at, "Posted") %></th>
 				<th>status</th>
 			</tr>
 			</thead>

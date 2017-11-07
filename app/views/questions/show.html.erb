@@ -52,9 +52,12 @@
 
 	<% else %>
 		<%= form_for([@question, @question.answers.build]) do |form| %>
+			<% if @question.user == current_user %>
+			  You cannot translate your own request!
+			<% end %>
 			<div class="field">
 				<%# form.label :text %>
-				<%= form.text_area :text, id: :answer_text, placeholder: 'Your answer', rows: 6, style: "width: 100%;" %>
+				<%= form.text_area :text, id: :answer_text, placeholder: 'Your translation', rows: 6, style: "width: 100%;" %>
 			</div>
 
 			<div class="field">

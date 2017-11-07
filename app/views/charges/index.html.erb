@@ -2,9 +2,11 @@
 	<div class='col-md-8 offset-md-2'>
 			<h2 class="space-bottom">Your translation requests.</h2>
 			<% if unpaid_count > 0 %>
-				<p class="space-bottom border">Notice:<br> There are <span style="color: tomato; font-size: 1.5em;"><%= unpaid_count %></span> unpaid requests.<br>
-				To publish your requests, please proceed to payments.</p>
-			  
+				<p class="space-bottom border h5">
+					<%# image_tag 'filename' %>
+					There are <span style="color: tomato;"><%= pluralize(unpaid_count, "unpaid request") %>.</span><br>
+					 To publish your request(s), please click the "Pay" button.
+				</p>
 			<% end %>
 
 			<table>
@@ -23,7 +25,7 @@
 							<td><%= link_to q.title, question_path(q) %></td>
 							<td><%= link_to q.text.truncate(34, separator: ' '), question_path(q) %></td>
 							<td><%= format_time(q.created_at) %></td>
-							<td><%= money(q.price) %></td>
+							<td><%= number_to_currency(q.price) %></td>
 							<td>
 								<% if q.paid? %>
 								<%= image_tag '5paid.png', width: 60 %>
