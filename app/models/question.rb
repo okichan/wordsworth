@@ -4,7 +4,9 @@ class Question < ApplicationRecord
   validates :title, presence: true
   validates :text, presence: true
   validates :user, presence: true
-  validates :price, numericality: { greater_than_or_equal_to: 1 }
+  validates :lang_from, presence: true
+  validates :lang_to, presence: true
+  # validates :price, numericality: { greater_than_or_equal_to: 1 }
 
    LANG_OPTIONS = [ "Arabic", 
    "Cantonese", 

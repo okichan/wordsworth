@@ -1,26 +1,72 @@
-<%= form_for @question, :url => question_thanks_path do |f| %>
-  <table class="table">
-    <tr>
-      <th>名前</th>
-      <td>
-        <%= f.hidden_field :name %>
-        <%= @inquiry.name %>
-      </td>
-    </tr>
-    <tr>
-      <th>メールアドレス</th>
-      <td>
-        <%= f.hidden_field :email %>
-        <%= @inquiry.email %>
-      </td>
-    </tr>
-    <tr>
-      <th>お問い合わせ内容</th>
-      <td>
-        <%= f.hidden_field :message %>
-        <%= simple_format(@inquiry.message) %>
-      </td>
-    </tr>
-  </table>
-  <%= f.submit '送信', :class => 'btn btn-primary' %>
-<% end %>
+<div class="row">
+	<h2 class='col col-md-8 offset-md-2 space-bottom'>Please review your translation request. </h2>
+</div>
+
+<div class="row">
+	<div class="col col-md-8 offset-md-2">
+		<%= form_for @question, :url => questions_path do |f| %>
+			<table class="table-bordered">
+				<tr>
+					<%= f.hidden_field :title %>
+					<td>Title:</td>		<td><%= @question.title %></td>
+				</tr>
+
+				<tr>
+					<%= f.hidden_field :text %>
+					<td>Text:</td>		<td><%= simple_format(@question.text) %></td>
+				</tr>
+
+				<tr>
+					<%= f.hidden_field :lang_from %>
+					<td>Language from:</td>		<td><%= @question.lang_from %></td>
+				</tr>
+
+				<tr>
+					<%= f.hidden_field :lang_to %>
+					<td>Language to:</td>		<td><%= @question.lang_to %></td>
+				</tr>
+
+				<tr>
+					<td >Subtotal:</td>		
+					<td class="text-right h4"> 
+						1 character = 4 cents <br>
+						<%= @question.text.length %> characters * 0.04 = 
+						<h1><%= number_to_currency(@question.text.length * 0.04) %></h1>
+						<%= f.hidden_field :price, value: @question.text.length * 0.04 %>
+						<%= f.hidden_field :user_id, value: current_user.id %>
+					</td>
+				</tr>
+			</table>
+				<br>
+				<div style="float: right;">
+					<%= f.submit 'Proceed to payment', :class => 'btn btn-primary cursor' %>
+				</div>
+		<% end %>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col col-lg-2 offset-lg-8 text-right">
+		<%= form_tag charges_path do %>
+			<article>
+				<% if flash[:error].present? %>
+				<div id="error_explanation">
+					<p><%= flash[:error] %></p>
+				</div>
+				<% end %>
+				<label class="amount">
+				<p>.</p>
+				</label>
+			</article>
+
+			<script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+				data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+				data-description="Translation request"
+				data-email="<%= current_user.email %>"
+				data-amount="<%= @question.text.length * 4 %>"
+				data-currency="aud"
+				data-locale="auto">
+			</script>
+		<% end %>
+	</div>
+</div>

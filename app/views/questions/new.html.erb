@@ -3,33 +3,9 @@
 <div class="row">
     <div class="col col-md-8 offset-md-2 link-yellow">
         <h1>Translation request</h1>
-
         <%= render 'form', question: @question %>
         <br>
-        
-        <%= form_tag charges_path do %>
-        <article>
-            <% if flash[:error].present? %>
-            <div id="error_explanation">
-                <p><%= flash[:error] %></p>
-            </div>
-            <% end %>
-            <label class="amount">
-            <p>Amount: <%= @amount %></p>
-            </label>
-        </article>
-
-        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                data-description="Translation request"
-                data-email="<%= current_user.email %>"
-                data-amount="<%= Question.first.price * 100 %>"
-                data-locale="auto"></script>
-        <% end %>
-
-        
         <hr>        
         <p><%= link_to 'Back', questions_path %></p>
-        <p><%= link_to 'PAY', new_charge_path(params[:price]) %></p>
     </div>
 </div>

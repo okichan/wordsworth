@@ -94,6 +94,7 @@ header {
     border: 0px solid #73AD21;
 }
 
+
 .btn-top {
     a {
         color: white;
@@ -112,9 +113,6 @@ header {
     }
 }
 
-.latest-question {
-    margin: 29px 0;
-}
 
 .link-yellow {
     a {
@@ -169,8 +167,8 @@ td {
 }
 
 textarea {
-    width: 100%;    
-    height: 200px;    
+    width: 300px; 
+    // border: 2px solid red;
 }
 
 .avatar {
@@ -238,10 +236,14 @@ textarea {
         width: 315px;
         border: 0px solid #73AD21;
     }
+
+    .width-150 {
+        width: 150px;
+    }
     
     textarea {
-        width: 560px;    
-        height: 200px;    
+        width: 660px;    
+        // height: 200px;    
     }
     
     .profile-username {

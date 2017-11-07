@@ -1,4 +1,4 @@
-<%= form_with(model: question, local: true) do |form| %>
+<%= form_for @question, url: questions_confirm_path do |form| %>
 	<% if question.errors.any? %>
 		<div id="error_explanation">
 			<% question.errors.full_messages.each do |message| %>
@@ -7,9 +7,10 @@
 		</div>
 	<% end %>
 
-	<div class="field row">
-		<%# form.label :title %>
-		<%= form.text_field :title, id: :question_title, placeholder: :title %>
+	<div class="form-group row" >
+		<div>
+			<%= form.text_field :title, id: :question_title, placeholder: :title %>
+		</div>
 	</div>
 
 	<!--
@@ -19,20 +20,22 @@
 	</div>
 	-->
 
-	<div class="field row text-right">
-		<%= form.text_area :text, id: "counted", rows: 6 %>
-		<p>Current character count: <span id="char-count">0</span></p>
-	</div>
+	<div class="form-group row">
+		<div class="">
+			<%= form.text_area :text, id: "counted", rows: 6, cols: "40" %>
+			<p>Current character count: <span id="char-count">0</span></p>
+		</div>
 
-	<script type="text/javascript">
-		$(document).ready(function() {
-			$('#char-count').html($('#counted').val().length);
-		});
-	
-		$('#counted').keyup(function() {
-			$('#char-count').html($(this).val().length);
-		});
-	</script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$('#char-count').html($('#counted').val().length);
+			});
+		
+			$('#counted').keyup(function() {
+				$('#char-count').html($(this).val().length);
+			});
+		</script>
+	</div>
 
 	<div class="field">
 		<%= form.label 'From: ' %>
@@ -41,10 +44,12 @@
 		<%= form.select(:lang_to, options_for_select(Question::LANG_OPTIONS, selected: form.object.lang_to), :include_blank => true) %>
 	</div>
 
+	<!--
 	<div class="field row">
 		<%= form.label 'Your offer:' %>
 		<%= form.number_field :price, step: :any %>
 	</div>
+	-->
 
 
 	<div class="field row">
@@ -52,7 +57,7 @@
 	</div>
 
 		<div class="actions">
-			<%= form.submit "Make an offer", class: "btn btn-post cursor btn-block" %>
+			<%= form.submit "Calculate fee and review your request.", class: "btn btn-post cursor btn-block" %>
 		</div>
 	
 <% end %>

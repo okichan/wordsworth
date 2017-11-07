@@ -2,6 +2,7 @@ class QuestionsController < ApplicationController
 	before_action :authenticate_user!, :except => [:index, :show]
 	before_action :set_question, only: [:show, :edit, :update, :destroy]
 	before_action :set_profile
+	# before_action :amount_to_be_charged
 
 	# GET /questions
 	# GET /questions.json
@@ -30,30 +31,28 @@ class QuestionsController < ApplicationController
 		@question = Question.new
 		# @amount = 44444
 	end	
+	
 	# GET /questions/1/edit
 	def edit
 	end	
 	
 	def confirm
 		@question = Question.new(question_params)
-		
-		if @question.valid?
-			render :action => 'confirm'
-		else
-			render :action => 'index'
+		unless @question.valid?
+			render :action => :new
+		  else       
 		end
 	end
-
+	
 	# POST /questions
 	# POST /questions.json
 	def create
 		@user = current_user
 		@question = Question.new(question_params)
-		@amount = Question.last.price
 		
 		respond_to do |format|
 			if @question.save
-				format.html { redirect_to new_charge_path, notice: 'Question was successfully created.' }
+				format.html { redirect_to questions_path, notice: 'Question was successfully created.' }
 				format.json { render :show, status: :created, location: @question }
 			else
 				format.html { render :new }
@@ -61,7 +60,11 @@ class QuestionsController < ApplicationController
 			end	
 		end	
 	end	
-
+	
+	def thanks
+		
+	end
+	
 	# PATCH/PUT /questions/1
 	# PATCH/PUT /questions/1.json
 	def update
@@ -99,6 +102,10 @@ class QuestionsController < ApplicationController
 		def set_profile
 			@profile = Profile.find(current_user.id) if current_user.present?
 		end
+
+		# def amount_to_be_charged
+			# @amount = (a.price * 100).to_i
+		# end
 		
 		# Never trust parameters from the scary internet, only allow the white list through.
 		def question_params

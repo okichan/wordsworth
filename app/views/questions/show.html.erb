@@ -17,7 +17,7 @@
 
 	<div class=" text-right">
 		<% if current_user.present? && current_user.id == @question.user_id %>
-			<%= link_to '[Edit]', edit_question_path(@question) %> <br>
+			<%= link_to '[Delete]', question_path(@question), method: :delete, data: { confirm: "Delete this?"}  %> <br>
 		<% end %>
 	</div>
 
