@@ -31,8 +31,4 @@ module ApplicationHelper
     def leftright
         style='border: 2px dotted red;'
     end
-
-    def testing(amount)
-        amount = @question.text.length * 0.04
-    end
 end
