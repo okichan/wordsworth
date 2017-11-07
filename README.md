@@ -53,3 +53,13 @@ I found this service called SmartDraw which in my opinion better visualised than
 - So I changed my direction to be more of AirTasker.
 - Thus I had to redesign my framework of course, and re-write hundreds of codes which I spent hell a lot of hours on. Learning opportunity yay.
 
+### Re-modelling to suit my capability.
+- Not always what I pictured took place because of my technical capability.
+- Especially integration of payment system with Stripe. Had so much 'fun' with passing params and stuff.
+- Spent so many hours to settle in where things still make sense and I feel I can accomplish.
+
+
+## Challenges
+- Sometimes, well most of the time I was feeling I'm spending too many hours on something and said to myself that I might as well ask for help.
+- But I didn't do enough and I think it's no good because
+- That's how you update your progress to others (and not leaving them wondering what on earth I'm up to).

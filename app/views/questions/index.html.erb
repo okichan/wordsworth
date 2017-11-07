@@ -39,9 +39,11 @@
 				<th><%= sort_link(@q, :lang_from) %></th>
 				<th><%= sort_link(@q, :lang_to) %></th>
 				<th><%= sort_link(@q, :created_at) %></th>
+				<th>status</th>
 			</tr>
 			</thead>
 			<% @questions.each do |question| %>
+				<% next if question.paid != true %> 
 				<tr>
 					<td class="col-xs-8"><%= link_to question.title, question %></td>
 					<%# question.title %>
@@ -49,6 +51,11 @@
 					<td><%= question.lang_from %></td>
 					<td><%= question.lang_to %></td>
 					<td><%= format_time(question.created_at) %></td>
+					<% if question.answers.size == 0 %>
+						<td>OPEN</td>
+					<% else %>
+						<td>CLOSED</td>
+					<% end %>
 					<%# link_to 'Edit', edit_question_path(question) %>
 					<%# link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %>
 				</tr>

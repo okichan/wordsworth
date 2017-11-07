@@ -3,5 +3,13 @@
 #
 # Examples:
 #
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Question.all.each do |n| n.update_attribute(:paid, true); end
+
+    a = Question.where(:paid =>  nil)
+
+a.each do |b|
+    b.paid = true
+    b.update
+end

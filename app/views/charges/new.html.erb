@@ -1,22 +1,32 @@
-<%= form_tag charges_path do %>
-	<article>
-		<% if flash[:error].present? %>
-			<div id="error_explanation">
-				<p><%= flash[:error] %></p>
-			</div>
-		<% end %>
-		<label class="amount">
-			<span>Amount: <%= params[:price] %></span>
-			<p><%= params[:id] %></p>
-		</label>
-	</article>
+<div class='row link-yellow bottom-space'>
+	<div class='col-sm-8 offset-sm-2 border'>
+		<%= form_tag charges_path do %>
+			<article>
+				<% if flash[:error].present? %>
+					<div id="error_explanation">
+						<p><%= flash[:error] %></p>
+					</div>
+				<% end %>
+				<label class="amount h2 space-bottom">
+					<span>Fee: <%= money(session[:price]) %></span>
+				</label>
+			</article>
 
-	<script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-		data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-		data-description="Translation request"
-		data-amount="<%= params[:price].to_f * 100 %>"
-		data-email="<%= current_user.email %>"
-		data-currency="aud"
-		data-locale="auto">
-	</script>
-<% end %>
+			<script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+				data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+				data-description="Translation request"
+				data-amount="<%= params[:price].to_f * 100 %>"
+				data-email="<%= current_user.email %>"
+				data-currency="aud"
+				data-locale="auto">
+			</script>
+		<% end %>
+		<br>
+	</div>
+</div>
+
+<div class='row'>
+	<div class='col-sm-8 offset-sm-2 link-yellow'>
+		<%= link_to 'Back', url_for(:back) %>
+	</div>
+</div>

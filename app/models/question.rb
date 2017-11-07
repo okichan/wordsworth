@@ -2,7 +2,7 @@ class Question < ApplicationRecord
   belongs_to :user
   has_many :answers
   validates :title, presence: true
-  validates :text, presence: true
+  validates :text, presence: true, length: { minimum: 20 }
   validates :user, presence: true
   validates :lang_from, presence: true
   validates :lang_to, presence: true

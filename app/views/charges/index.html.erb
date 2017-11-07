@@ -1,6 +1,11 @@
 <div class='row'>
 	<div class='col-md-8 offset-md-2'>
 			<h2 class="space-bottom">Your translation requests.</h2>
+			<% if unpaid_count > 0 %>
+				<p class="space-bottom border">Notice:<br> There are <span style="color: tomato; font-size: 1.5em;"><%= unpaid_count %></span> unpaid requests.<br>
+				To publish your requests, please proceed to payments.</p>
+			  
+			<% end %>
 
 			<table>
 				<thead>
@@ -9,7 +14,7 @@
 						<th>text</th>
 						<th>date</th>
 						<th>price</th>
-						<th> </th>
+						<th>Status</th>
 					</tr>
 				</thead>        
 				<tbody>
@@ -21,9 +26,9 @@
 							<td><%= money(q.price) %></td>
 							<td>
 								<% if q.paid? %>
-								<%= image_tag '2paid.png', width: 50 %>
+								<%= image_tag '5paid.png', width: 60 %>
 								<% else %>
-								<%= link_to 'Pay', new_charge_path(price: q.price, id: q.id) %>
+								<%= link_to 'Pay', new_charge_path(price: q.price, id: q.id), class: 'btn btn-danger' %>
 								<% end %>
 							</td>
 						</tr>
