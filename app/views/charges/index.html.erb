@@ -1,24 +1,31 @@
-Your translation requests
+<div class='row'>
+	<div class='col-md-8 offset-md-2'>
+			<h2 class="space-bottom">Your translation requests.</h2>
 
-<table>
-	<thead>
-		<tr>
-			<th>title</th>
-			<th>text</th>
-			<th>date</th>
-			<th>pay</th>
-		</tr>
-	</thead>        
-	<tbody>
-		<% @questions.each do |q| %>
-			<tr>
-				<td><%= link_to q.title, question_path(q) %></td>
-				<td><%= q.text.truncate(34, separator: ' ') %></td>
-				<td><%= q.created_at %></td>
-				<td>
-					<%= link_to 'Pay', new_charge_path(price: q.price) %>
-				</td>
-			</tr>
-		<% end %>
-	</tbody>
-</table>
+			<table>
+				<thead>
+					<tr>
+						<th>title</th>
+						<th>text</th>
+						<th>date</th>
+						<th>price</th>
+						<th> </th>
+					</tr>
+				</thead>        
+				<tbody>
+					<% @questions.each do |q| %>
+						<tr>
+							<td><%= link_to q.title, question_path(q) %></td>
+							<td><%= link_to q.text.truncate(34, separator: ' '), question_path(q) %></td>
+							<td><%= format_time(q.created_at) %></td>
+							<td><%= q.price %></td>
+							<td>
+								<%= link_to 'Pay', new_charge_path(price: q.price) %>
+							</td>
+						</tr>
+					<% end %>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

@@ -29,8 +29,8 @@
 				<tr>
 					<td >Subtotal:</td>		
 					<td class="text-right h4"> 
-						1 character = 4 cents <br>
-						<%= @question.text.length %> characters * 0.04 = 
+						¢4 per character.<br>
+						<%= @question.text.length %> characters = 
 						<h1><%= number_to_currency(@question.text.length * 0.04) %></h1>
 						<%= f.hidden_field :price, value: @question.text.length * 0.04 %>
 						<%= f.hidden_field :user_id, value: current_user.id %>

@@ -54,7 +54,7 @@
 		<%= form_for([@question, @question.answers.build]) do |form| %>
 			<div class="field">
 				<%# form.label :text %>
-				<%= form.text_area :text, id: :answer_text, placeholder: 'Your answer', style: "width: 100%;" %>
+				<%= form.text_area :text, id: :answer_text, placeholder: 'Your answer', rows: 6, style: "width: 100%;" %>
 			</div>
 
 			<div class="field">

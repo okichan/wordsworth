@@ -14,7 +14,8 @@ class ChargesController < ApplicationController
 	
 	def create
 		
-		session[:price] = @amount
+		@amount = session[:price]
+		
 		customer = Stripe::Customer.create(
 		:email => params[:stripeEmail],
 		:source  => params[:stripeToken]
@@ -35,7 +36,7 @@ class ChargesController < ApplicationController
 	private
 			def amount_to_be_charged
 				# @amount = 599
-				@amount = session[:price]
+				@amount = 500
 				# testing()
 			end
 

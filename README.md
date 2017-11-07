@@ -47,8 +47,9 @@ I found this service called SmartDraw which in my opinion better visualised than
 
 ### I thought I had planned well.
 - I was first thinking of Stack Overflow kind of portal where a question can have multiple answers, however the more I work on it the clearer it became that this is not going to work out as I planned.
-- To be specific, I was stuck where to implement payment system. My initial idea was something like you need to pay if you post more than certain amout of times.
+- To be specific, I was stuck where to implement payment system. My initial idea was something like you need to pay if you post more than certain amount of times.
 - However when I considered a two-sided marketplace, I was thinking to myself "Would translators be benefitted by this model when they're doing it for free? Is this even a two-sided market? Would I sign up as a translator?"
 - Answer to all the questsions were NO. 
 - So I changed my direction to be more of AirTasker.
 - Thus I had to redesign my framework of course, and re-write hundreds of codes which I spent hell a lot of hours on. Learning opportunity yay.
+
