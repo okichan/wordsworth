@@ -29,7 +29,6 @@ class QuestionsController < ApplicationController
 	def new
 		@user = current_user
 		@question = Question.new
-		# @amount = 44444
 	end	
 	
 	# GET /questions/1/edit
@@ -103,10 +102,6 @@ class QuestionsController < ApplicationController
 			@profile = Profile.find(current_user.id) if current_user.present?
 		end
 
-		# def amount_to_be_charged
-			# @amount = (a.price * 100).to_i
-		# end
-		
 		# Never trust parameters from the scary internet, only allow the white list through.
 		def question_params
 			params.require(:question).permit(:title, :text, :lang_from, :lang_to, :user_id, :price)

@@ -1,6 +1,5 @@
 class ChargesController < ApplicationController
 	before_action :authenticate_user!	
-	before_action :amount_to_be_charged
 	before_action :set_profile
 
 	def index
@@ -9,38 +8,31 @@ class ChargesController < ApplicationController
 
 
 	def new
-		session[:price] = @amount
 	end
 	
 	def create
-		
-		@amount = session[:price]
-		
+		# Amount in cents
+		@amount = 500
+	  
 		customer = Stripe::Customer.create(
-		:email => params[:stripeEmail],
-		:source  => params[:stripeToken]
+		  :email => params[:stripeEmail],
+		  :source  => params[:stripeToken]
 		)
-	
+	  
 		charge = Stripe::Charge.create(
-		:customer    => customer.id,
-		:amount      => @amount,
-		:description => 'Rails Stripe customer',
-		:currency    => 'aud'
+		  :customer    => customer.id,
+		  :amount      => @amount,
+		  :description => 'Rails Stripe customer',
+		  :currency    => 'aud'
 		)
-	
-	rescue Stripe::CardError => e
+	  
+		rescue Stripe::CardError => e
 		flash[:error] = e.message
 		redirect_to new_charge_path
 	end
 
 	private
-			def amount_to_be_charged
-				# @amount = 599
-				@amount = 500
-				# testing()
-			end
-
 			def set_profile
-				@profile = Profile.find(current_user.id) if signed_in?
+				@profile = Profile.find(current_user.id)
 			end
 end

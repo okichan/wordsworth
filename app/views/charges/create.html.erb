@@ -1,6 +1,6 @@
 <div class='row link-yellow bottom-space'>
 	<div class='col-sm-8 offset-sm-2'>
-		<h2>Thanks, you paid(<%= number_to_currency(@amount) %>)!</h2>
+		<h2>Thanks, you paid <%= number_to_currency(@amount) %>!</h2>
 	</div>
 	<div class='col-sm-8 offset-sm-2'>
 		<%= link_to 'View all requests', charges_path %>
