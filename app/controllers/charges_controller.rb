@@ -3,17 +3,21 @@ class ChargesController < ApplicationController
 	before_action :set_profile
 
 	def index
-		@questions = Question.where(user_id: current_user.id)
+		@questions = Question.where(user_id: current_user.id).order(paid: :desc)
 	end
 
 
 	def new
+		@question = Question.find(params[:id])
 	end
 	
 	def create
 		# Amount in cents
 		@amount = 500
-	  
+		@question = Question.find(40)
+		@question.paid = true
+		@question.save
+
 		customer = Stripe::Customer.create(
 		  :email => params[:stripeEmail],
 		  :source  => params[:stripeToken]
@@ -25,7 +29,7 @@ class ChargesController < ApplicationController
 		  :description => 'Rails Stripe customer',
 		  :currency    => 'aud'
 		)
-	  
+
 		rescue Stripe::CardError => e
 		flash[:error] = e.message
 		redirect_to new_charge_path

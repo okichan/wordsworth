@@ -18,9 +18,13 @@
 							<td><%= link_to q.title, question_path(q) %></td>
 							<td><%= link_to q.text.truncate(34, separator: ' '), question_path(q) %></td>
 							<td><%= format_time(q.created_at) %></td>
-							<td><%= q.price %></td>
+							<td><%= money(q.price) %></td>
 							<td>
-								<%= link_to 'Pay', new_charge_path(price: q.price) %>
+								<% if q.paid? %>
+								<%= image_tag '2paid.png', width: 50 %>
+								<% else %>
+								<%= link_to 'Pay', new_charge_path(price: q.price, id: q.id) %>
+								<% end %>
 							</td>
 						</tr>
 					<% end %>
