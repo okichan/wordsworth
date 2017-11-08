@@ -25,10 +25,6 @@ For font pairing, I was first to mix serif and sans-serif but sans-serif just di
 
 ## ERD
 
-I found this service called SmartDraw which in my opinion better visualised than DBdesigner.
-
-<img src="https://github.com/okichan/wordsworth/blob/master/app/assets/images/erd.png" alt="DBdesigner" width=500 />
-
 ![DBdesigner](app/assets/images/erd.png "DBdesigner")
 ![SmartDraw](app/assets/images/erd2.png "SmartDraw")
 
