@@ -26,7 +26,7 @@ For font pairing, I was first to mix serif and sans-serif but sans-serif just di
 ## ERD
 
 ![DBdesigner](app/assets/images/erd.png "DBdesigner")
-![SmartDraw](app/assets/images/erd2.PNG"SmartDraw")
+![SmartDraw](app/assets/images/erd2.PNG "SmartDraw")
 
 ## Gems used
 - Bootstrap
@@ -59,7 +59,6 @@ For font pairing, I was first to mix serif and sans-serif but sans-serif just di
 - I was hesitant because I wasn't sure if I can explain my situation and problem.
 - I don't think it's a good practice because that's how you actually update your progress with others (and not leaving them wondering what on earth I've been up to).
 
-<img src="http://i.memecaptain.com/gend_images/YXPqhA.jpg" alt="How this app works" width=200 />
 
 ### Re-modelling to suit my capability.
 - Not always what I pictured took place because of my technical capability.
@@ -68,4 +67,6 @@ For font pairing, I was first to mix serif and sans-serif but sans-serif just di
 - I gave up implementing function where it redirects back to `post` page after the payment is made via Stripe.
 - In the end I added `true`/`false` column to the databae and restrict some actions based on the boolean. (ie your post won't be published unless you pay.) 
 
-# https://wordsworth.herokuapp.com/
+## https://wordsworth.herokuapp.com/
+
+<img src="http://i.memecaptain.com/gend_images/YXPqhA.jpg" alt="" width=200 />
