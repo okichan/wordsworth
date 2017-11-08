@@ -18,8 +18,7 @@ Although I am not a professional translator, I was actually enjoying the task (i
 
 [![Trello link](https://github.com/okichan/wordsworth/blob/master/app/assets/images/userstory.PNG?v=4&s=130)](https://trello.com/b/taAJv1hw)
 
-[![Trello link](https://github.com/okichan/wordsworth/blob/master/app/assets/images/userstory.PNG){:height="50%" width="50%"}](https://trello.com/b/taAJv1hw)
-
+![Trello link](https://github.com/okichan/wordsworth/blob/master/app/assets/images/userstory.PNG){:height="50%" width="50%"}
 
 
 
