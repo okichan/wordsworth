@@ -8,18 +8,12 @@ Why?
 Because this is based on my work experience where I was paid to translate some documents from Japanese to English for business purposes. 
 Although I am not a professional translator, I was actually enjoying the task (in fact I once thought of becoming a translator) so I thought it would be good if there is a portal for business people who need decent translations and translators who want to earn some.
 
-<img src="https://github.com/okichan/wordsworth/blob/master/app/assets/images/flow.png" alt="How this app works" width=100"/>
+<img src="https://github.com/okichan/wordsworth/blob/master/app/assets/images/flow.png" alt="How this app works" width=400 />
 
 ## User story
 
-[![Trello link](https://github.com/okichan/wordsworth/blob/master/app/assets/images/userstory.PNG =100x20)](https://trello.com/b/taAJv1hw)
+<a href="https://trello.com/b/taAJv1hw"><img src="https://github.com/okichan/wordsworth/blob/master/app/assets/images/userstory.PNG" alt="Trello" width=700 /></a>
 
-
-[![Trello link](https://github.com/okichan/wordsworth/blob/master/app/assets/images/userstory.PNG?v=4&s=130)](https://trello.com/b/taAJv1hw)
-
-![Trello link](https://github.com/okichan/wordsworth/blob/master/app/assets/images/userstory.PNG){:height="50%" width="50%"}
-
-![](https://avatars3.githubusercontent.com/u/31112269?v=4&s=20)
 
 ## Framework
 The one with yellow background, I personally prefer this but it did not give much sense of formality so had to ditch it.
@@ -31,10 +25,10 @@ For font pairing, I was first to mix serif and sans-serif but sans-serif just di
 
 ## ERD
 
-I found this service called SmartDraw which in my opinion better visualised than DBdesigner.
-
 ![DBdesigner](app/assets/images/erd.png "DBdesigner")
-![SmartDraw](app/assets/images/erd2.png "SmartDraw")
+
+I found this service called SmartDraw which helped me visualising 1:n relationship etc.
+![SmartDraw](app/assets/images/erd2.PNG "SmartDraw")
 
 ## Gems used
 - Bootstrap
@@ -67,7 +61,6 @@ I found this service called SmartDraw which in my opinion better visualised than
 - I was hesitant because I wasn't sure if I can explain my situation and problem.
 - I don't think it's a good practice because that's how you actually update your progress with others (and not leaving them wondering what on earth I've been up to).
 
-<img src="http://i.memecaptain.com/gend_images/YXPqhA.jpg" alt="How this app works" width=200 />
 
 ### Re-modelling to suit my capability.
 - Not always what I pictured took place because of my technical capability.
@@ -76,4 +69,6 @@ I found this service called SmartDraw which in my opinion better visualised than
 - I gave up implementing function where it redirects back to `post` page after the payment is made via Stripe.
 - In the end I added `true`/`false` column to the databae and restrict some actions based on the boolean. (ie your post won't be published unless you pay.) 
 
-# https://wordsworth.herokuapp.com/
+## https://wordsworth.herokuapp.com/
+
+<img src="http://i.memecaptain.com/gend_images/YXPqhA.jpg" alt="" width=200 />
