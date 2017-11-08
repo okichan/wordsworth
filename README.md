@@ -9,7 +9,7 @@ Because this is based on my work experience where I was paid to translate some d
 Although I am not a professional translator, I was actually enjoying the task (in fact I once thought of becoming a translator) so I thought it would be good if there is a portal for business people who need decent translations and translators who want to earn some.
 
 <a href="app/assets/images/flow.png"> <img src="app/assets/images/flow.png" alt="How this app works" width=200"/> </a>
-
+<img src="https://github.com/okichan/wordsworth/blob/master/app/assets/images/flow.png" alt="How this app works" width=100"/>
 
 ## User story
 
