@@ -13,7 +13,7 @@ Although I am not a professional translator, I was actually enjoying the task (i
 
 ## User story
 
-<a href="https://trello.com/b/taAJv1hw"> <img src="app/assets/images/userstory.PNG" alt="Trello link" width=400"/> </a>
+[![Trello link](https://github.com/okichan/wordsworth/blob/master/app/assets/images/userstory.PNG =100x20)](https://trello.com/b/taAJv1hw)
 
 ## Framework
 The one with yellow background, I personally prefer this but it did not give much sense of formality so had to ditch it.
