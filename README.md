@@ -46,6 +46,11 @@ I found this service called SmartDraw which helped me visualising 1:n relationsh
 - Although now I know where the error comes from and it is to do with the discrepancies in build version, I wasn't able to fix it.
 - So I disabled resizing function for a temporary fix. At least I made it work!
 
+### Stripe!
+- Had so much fun figuring out how to pass `params`. I worked it around by using `session[:id]` thing.
+- I gave up implementing function where it redirects back to where you were after the payment is made via Stripe.
+- In the end I added `true`/`false` column to the databae and restrict ceratin actions based on that boolean. (eg your post won't be published unless `paid` boolean is `true`.) 
+
 ### I thought I had planned well.
 - I was first thinking of Stack Overflow kind of portal where a question can have multiple answers, however the more I work on it the clearer it became that this is not going to work out as I planned.
 - To be specific, I was stuck where to implement payment system. My initial idea was something like you need to pay if you post more than certain amount of times.
@@ -58,17 +63,16 @@ I found this service called SmartDraw which helped me visualising 1:n relationsh
 ## Challenges
 ### My introversion.
 - When I got stuck, I spent too many hours solving it myself when all I had to do is just ask.
-- I was hesitant because I wasn't sure if I can explain my situation and problem.
+- I was hesitant because I wasn't sure if I can explain my situation and problems well, like where should I begin with my stories, I felt I need to explain EVERYTHING and I just felt "meh I will figure out myself".
 - I don't think it's a good practice because that's how you actually update your progress with others (and not leaving them wondering what on earth I've been up to).
 
 
 ### Re-modelling to suit my capability.
 - Not always what I pictured took place because of my technical capability.
-- Especially integration of payment system with Stripe. Had so much 'fun' figuring out how to pass `params`.
-- So I spent so many hours to settle in where things still make sense and the level I feel I can accomplish.
-- I gave up implementing function where it redirects back to `post` page after the payment is made via Stripe.
-- In the end I added `true`/`false` column to the databae and restrict some actions based on the boolean. (ie your post won't be published unless you pay.) 
+- I had to give up some features and in return realisticality was sacrificed a bit.
 
 ## https://wordsworth.herokuapp.com/
-
-<img src="http://i.memecaptain.com/gend_images/YXPqhA.jpg" alt="" width=200 />
+ <br />
+  <br />
+Me 95% of the time
+<img src="app/assets/images/new_error.jpg" />
