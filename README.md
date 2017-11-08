@@ -8,7 +8,9 @@ Why?
 Because this is based on my work experience where I was paid to translate some documents from Japanese to English for business purposes. 
 Although I am not a professional translator, I was actually enjoying the task (in fact I once thought of becoming a translator) so I thought it would be good if there is a portal for business people who need decent translations and translators who want to earn some.
 
-<a href="app/assets/images/flow.png"> <img src="app/assets/images/flow.png" alt="How this app works" width=200"/> </a>
+<a href="app/assets/images/flow.png"> <img src="app/assets/images/flow.png" alt="How this app works" width=200/> </a>
+  
+  f
 <img src="https://github.com/okichan/wordsworth/blob/master/app/assets/images/flow.png" alt="How this app works" width=100"/>
 
 ## User story
@@ -68,7 +70,7 @@ I found this service called SmartDraw which in my opinion better visualised than
 - I was hesitant because I wasn't sure if I can explain my situation and problem.
 - I don't think it's a good practice because that's how you actually update your progress with others (and not leaving them wondering what on earth I've been up to).
 
-<img src="http://i.memecaptain.com/gend_images/YXPqhA.jpg" alt="How this app works" width=200;/>
+<img src="http://i.memecaptain.com/gend_images/YXPqhA.jpg" alt="How this app works" width=200 />
 
 ### Re-modelling to suit my capability.
 - Not always what I pictured took place because of my technical capability.
