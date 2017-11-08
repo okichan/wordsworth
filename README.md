@@ -15,6 +15,9 @@ Although I am not a professional translator, I was actually enjoying the task (i
 
 [![Trello link](https://github.com/okichan/wordsworth/blob/master/app/assets/images/userstory.PNG =100x20)](https://trello.com/b/taAJv1hw)
 
+
+[![Trello link](https://github.com/okichan/wordsworth/blob/master/app/assets/images/userstory.PNG?s=200)](https://trello.com/b/taAJv1hw)
+
 ## Framework
 The one with yellow background, I personally prefer this but it did not give much sense of formality so had to ditch it.
 Then I got inspiration from old-fashioned dictionaries so fonts are all serif, the colour scheme is deep green with touch of yellow (like cover, you know).  
