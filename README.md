@@ -26,7 +26,7 @@ For font pairing, I was first to mix serif and sans-serif but sans-serif just di
 ## ERD
 
 ![DBdesigner](app/assets/images/erd.png "DBdesigner")
-![SmartDraw](app/assets/images/erd2.png "SmartDraw")
+![SmartDraw](app/assets/images/erd2.PNG"SmartDraw")
 
 ## Gems used
 - Bootstrap
