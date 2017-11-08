@@ -30,7 +30,7 @@
 
 
 <div class="row justify-content-center">
-	<div class="col-md-8 table-responsive link-yellow">
+	<div class="col-md-10 table-responsive link-yellow">
 		<table class="table table-hover">
 			<thead>
 			<tr>
@@ -44,10 +44,9 @@
 			</thead>
 			<% @questions.each do |question| %>
 				<% next if question.paid != true %> 
-				<tr>
-					<td class="col-xs-8"><%= link_to question.title, question %></td>
-					<%# question.title %>
-					<td class="text-center col-xs-3" ><%= money(question.price) %></td>
+				<tr onclick="document.location = '/questions/<%= question.id %>';" class="cursor" >
+					<td><%= link_to question.title, question %></td>
+					<td class="text-center" ><%= money(question.price) %></td>
 					<td><%= question.lang_from %></td>
 					<td><%= question.lang_to %></td>
 					<td><%= format_time(question.created_at) %></td>
@@ -56,8 +55,6 @@
 					<% else %>
 						<td>CLOSED</td>
 					<% end %>
-					<%# link_to 'Edit', edit_question_path(question) %>
-					<%# link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %>
 				</tr>
 			<% end %>
 		</table>

@@ -33,8 +33,10 @@
 		<% unless current_page?(root_path) %> 
 			<%= render '/layouts/header' %>
 			<div class="container">
-				<p id="notice"><%= notice %></p>
-				<p class="alert"><%= alert %></p>
+				<% unless current_page?(charges_path) %>
+					<p id="notice"><%= notice %></p>
+					<p class="alert"><%= alert %></p>
+				<% end %>
 				<%= yield %>
 				<br>
 				<br>

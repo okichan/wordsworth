@@ -8,7 +8,8 @@ Why?
 Because this is based on my work experience where I was paid to translate some documents from Japanese to English for business purposes. 
 Although I am not a professional translator, I was actually enjoying the task (in fact I once thought of becoming a translator) so I thought it would be good if there is a portal for business people who need decent translations and translators who want to earn some.
 
-Detailed User Story can be found in Trello below.
+<a href="app/assets/images/flow.png"> <img src="flow.png" alt="How this app works" width=200"/> </a>
+
 
 ## User story
 
@@ -27,7 +28,7 @@ For font pairing, I was first to mix serif and sans-serif but sans-serif just di
 I found this service called SmartDraw which in my opinion better visualised than DBdesigner.
 
 ![DBdesigner](app/assets/images/erd.png "DBdesigner")
-![SmartDraw](https://github.com/okichan/wordsworth/blob/master/app/assets/images/erd2.PNG "SmartDraw")
+![SmartDraw](app/assets/images/erd2.png "SmartDraw")
 
 ## Gems used
 - Bootstrap
@@ -53,6 +54,15 @@ I found this service called SmartDraw which in my opinion better visualised than
 - So I changed my direction to be more of AirTasker.
 - Thus I had to redesign my framework of course, and re-write hundreds of codes which I spent hell a lot of hours on. Learning opportunity yay.
 
+
+## Challenges
+### My introversion.
+- When I got stuck, I spent too many hours solving it myself when all I had to do is just ask.
+- I was hesitant because I wasn't sure if I can explain my situation and problem.
+- I don't think it's a good practice because that's how you actually update your progress with others (and not leaving them wondering what on earth I've been up to).
+
+<img src="http://i.memecaptain.com/gend_images/YXPqhA.jpg" alt="How this app works" width=200;/>
+
 ### Re-modelling to suit my capability.
 - Not always what I pictured took place because of my technical capability.
 - Especially integration of payment system with Stripe. Had so much 'fun' figuring out how to pass `params`.
@@ -60,7 +70,4 @@ I found this service called SmartDraw which in my opinion better visualised than
 - I gave up implementing function where it redirects back to `post` page after the payment is made via Stripe.
 - In the end I added `true`/`false` column to the databae and restrict some actions based on the boolean. (ie your post won't be published unless you pay.) 
 
-## Challenges
-- Sometimes, well most of the time I was feeling I'm spending too many hours on something and said to myself that I might as well ask for help.
-- But I didn't do enough and I think it's no good because
-- That's how you update your progress to others (and not leaving them wondering what on earth I'm up to).
+# https://wordsworth.herokuapp.com/

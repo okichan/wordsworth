@@ -4,9 +4,16 @@ class Question < ApplicationRecord
   validates :title, presence: true
   validates :text, presence: true, length: { minimum: 20 }
   validates :user, presence: true
-  validates :lang_from, presence: true
-  validates :lang_to, presence: true
-  # validates :price, numericality: { greater_than_or_equal_to: 1 }
+  validate :language
+
+  def language
+    if lang_from.empty?
+      self.errors[:base] << "'From' can't be blank"
+    end
+    if lang_to.empty?
+      self.errors[:base] << "'To' can't be blank"
+    end
+  end
 
    LANG_OPTIONS = [ "Arabic", 
    "Cantonese", 

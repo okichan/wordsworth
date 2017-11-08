@@ -51,8 +51,7 @@ class QuestionsController < ApplicationController
 		
 		respond_to do |format|
 			if @question.save
-				format.html { redirect_to charges_path, notice: "Question was successfully created. However it will only
-				published after the payment is completed." }
+				format.html { redirect_to charges_path, notice: "Question was successfully created. Please proceed with the payment to publish your request." }
 				format.json { render :show, status: :created, location: @question }
 			else
 				format.html { render :new }
