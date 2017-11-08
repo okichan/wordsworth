@@ -26,6 +26,8 @@ For font pairing, I was first to mix serif and sans-serif but sans-serif just di
 ## ERD
 
 ![DBdesigner](app/assets/images/erd.png "DBdesigner")
+
+I found this service called SmartDraw which helped me visualising 1:n relationship etc.
 ![SmartDraw](app/assets/images/erd2.PNG "SmartDraw")
 
 ## Gems used
