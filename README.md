@@ -8,11 +8,11 @@ Why?
 Because this is based on my work experience where I was paid to translate some documents from Japanese to English for business purposes. 
 Although I am not a professional translator, I was actually enjoying the task (in fact I once thought of becoming a translator) so I thought it would be good if there is a portal for business people who need decent translations and translators who want to earn some.
 
-<img src="https://github.com/okichan/wordsworth/blob/master/app/assets/images/flow.png" alt="How this app works" width=100 />
+<img src="https://github.com/okichan/wordsworth/blob/master/app/assets/images/flow.png" alt="How this app works" width=300 />
 
 ## User story
 
-<img src="https://github.com/okichan/wordsworth/blob/master/app/assets/images/userstory.PNG" alt="Trello" width=100 />
+<a href="https://trello.com/b/taAJv1hw"><img src="https://github.com/okichan/wordsworth/blob/master/app/assets/images/userstory.PNG" alt="Trello" width=100 /></a>
 
 [![Trello link](https://github.com/okichan/wordsworth/blob/master/app/assets/images/userstory.PNG](https://trello.com/b/taAJv1hw)
 
