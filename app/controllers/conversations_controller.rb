@@ -8,7 +8,7 @@ class ConversationsController < ApplicationController
   def index
     as1 = Conversation.where(user1: current_user)
     as2 = Conversation.where(user2: current_user)
-    @conversations = (as1 | as2).sort!
+    @conversations = (as1 | as2)
   end
 
   # GET /conversations/1
@@ -30,14 +30,15 @@ class ConversationsController < ApplicationController
   # POST /conversations.json
   def create
     @conversation = Conversation.new(conversation_params)
-    # @conversation.user1 = current_user
+    @existing_convo = Conversation.where("user1_id = ? AND user2_id = ?", params[:conversation][:user1_id], params[:conversation][:user2_id]).first
     
     respond_to do |format|
       if @conversation.save
-        format.html { redirect_to conversations_path, notice: 'Conversation was successfully created.' }
+        @convo = Conversation.last[:id]
+        format.html { redirect_to conversation_messages_path(@convo), notice: 'This is the beginning of the conversation.' }
         format.json { render :show, status: :created, location: @conversation }
       else
-        format.html { redirect_to conversations_path, notice: 'Conversation with this user already exists!' }
+        format.html { redirect_to conversation_messages_path(@existing_convo.id) }
         format.json { render json: @conversation.errors, status: :unprocessable_entity }
       end
     end
