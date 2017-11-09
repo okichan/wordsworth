@@ -76,7 +76,7 @@ I could only get to use once though because I had to pay.
 ## What to do next?
 - Full Shrine implementation. Figure out resizing issues.
 - Action Cable for real-time chat.
-- Figure out how Stripe pays out to other account..
+- Figure out how Stripe pays out to other account (since currently translator is paid $0).
 - UX design.
 
 
