@@ -4,6 +4,7 @@ class AnswersController < ApplicationController
 
   def create
     @question = Question.find(params[:question_id])
+    SampleMailer.send_when_create(@question).deliver
     @question.answers.create(comment_params)
     redirect_to question_path(@question)
   end
