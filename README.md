@@ -16,9 +16,8 @@ Although I am not a professional translator, I was actually enjoying the task (i
 
 
 ## Framework
-The one with yellow background, I personally prefer this but it did not give much sense of formality so had to ditch it.
-Then I got inspiration from old-fashioned dictionaries so fonts are all serif, the colour scheme is deep green with touch of yellow (like cover, you know).  
-For font pairing, I was first to mix serif and sans-serif but sans-serif just didn't feel right, so I went for calligraphy (logo - Tangerine) and serif (body - Vollkorn).
+I got inspiration from old-fashioned dictionaries so main font is serif (Vollkorn) with logo being calligraphy (Tangerine).
+The colour scheme is deep green with touch of golden yellow (like old dictionaries, you know).  
 
 [![Figma link](https://github.com/okichan/wordsworth/blob/master/app/assets/images/figma.PNG "Figma")](https://www.figma.com/file/DOENyU8PeCqCaMp0RDLROemX/Wordsworth)
 
@@ -27,7 +26,9 @@ For font pairing, I was first to mix serif and sans-serif but sans-serif just di
 
 ![DBdesigner](app/assets/images/erd.png "DBdesigner")
 
-I found this service called SmartDraw which helped me visualising 1:n relationship etc.
+I also found this service called SmartDraw which helped me visualising 1:n relationship etc.
+I could only get to use once though because I had to pay.
+
 ![SmartDraw](app/assets/images/erd2.PNG "SmartDraw")
 
 ## Gems used
@@ -70,6 +71,14 @@ I found this service called SmartDraw which helped me visualising 1:n relationsh
 ### Re-modelling to suit my capability.
 - Not always what I pictured took place because of my technical capability.
 - I had to give up some features and in return realisticality was sacrificed a bit.
+
+
+## What to do next?
+- Full Shrine implementation. Figure out resizing issues.
+- Action Cable for real-time chat.
+- Figure out how Stripe pays out to other account..
+- UX design.
+
 
 ## https://wordsworth.herokuapp.com/
  <br />
