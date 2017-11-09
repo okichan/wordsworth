@@ -20,7 +20,7 @@
 		<%= form_for ([@conversation, @conversation.messages.build]) do |f| %>
 			<div class="col">
 				<div id="bottom">
-					<%= f.text_area :content, rows: 4 %>
+					<%= f.text_area :content, autofocus: true, rows: 4 %>
 				</div>
 			</div>
 			<div class="col text-right">

@@ -10,6 +10,7 @@
 				<%= render '/conversations/form', conversation: @conversation %>
 			<% else %>
 				<p>This is you.</p>
+				<%= @profile.user.email %>
 			<% end %>
 			
 		</div>
