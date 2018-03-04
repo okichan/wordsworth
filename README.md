@@ -15,7 +15,7 @@ Although I am not a professional translator, I was actually enjoying the task (i
 <a href="https://trello.com/b/taAJv1hw"><img src="https://github.com/okichan/wordsworth/blob/master/app/assets/images/userstory.PNG" alt="Trello" width=700 /></a>
 
 
-## Framework
+## Wireframe
 I got inspiration from old-fashioned dictionaries so main font is serif (Vollkorn) with logo being calligraphy (Tangerine).
 The colour scheme is deep green with touch of golden yellow (like old dictionaries, you know).  
 
